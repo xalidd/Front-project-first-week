@@ -21,7 +21,7 @@
     "noFallthroughCasesInSwitch": true
   },
 
-  "include": ["src", "Books"],
+  "include": ["src", "src/components/Books"],
 
   "include": ["src", "src/components/FullPage"],
 
