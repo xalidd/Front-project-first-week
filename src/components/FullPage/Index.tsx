@@ -1,4 +1,4 @@
-import styles from "../FullPage/FullPage.module.css";
+import styles from "./FullPage.module.css";
 import bookim from "../../someimg/ведьмак.jpeg";
 
 const FullPage = () => {

@@ -1,5 +1,5 @@
 
-import Header from "./Header";
+import Header from "./components/Header";
 import styles from "./header.module.css";
 =======
 import FullPage from "./components/FullPage/Index"
