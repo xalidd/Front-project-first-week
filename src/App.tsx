@@ -1,6 +1,6 @@
 
 
-import { Books } from "../Books/index";
+import { Books } from "./components/Books/index";
 
 import Header from "./components/Header";
 import styles from "./header.module.css";
