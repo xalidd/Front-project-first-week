@@ -20,6 +20,10 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
+
   "include": ["src", "Books"],
+
+  "include": ["src", "src/components/FullPage"],
+
   "references": [{ "path": "./tsconfig.node.json" }]
 }
