@@ -1,0 +1,131 @@
+.upLine {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.wrapper {
+  height: 120px;
+  padding: 15px;
+}
+.btnNew {
+  text-align: center;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  margin-left: 5px;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  border: none;
+  width: 120px;
+  height: 45px;
+  background-image: linear-gradient(
+    to right,
+    #003cc5 0%,
+    #0b63f6 51%,
+    #003cc5 100%
+  );
+}
+
+.btnNew:hover {
+  background-position: right center;
+}
+
+.search {
+  width: 250px;
+}
+
+ul {
+  display: flex;
+  justify-content: space-around;
+  list-style-type: none;
+}
+
+.search {
+  width: 400px;
+  height: 39px;
+  border-radius: 15px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background-color: ;
+}
+
+ul li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+ul li a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: #333;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
+
+ul li a:hover {
+  background-color: rgb(227, 215, 240);
+  border: solid 0.5px black;
+  border-radius: 20px;
+}
+
+.navBar {
+  width: 400px;
+}
+
+.downNavBar {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  font-size: 20px;
+}
+a {
+  text-decoration: none;
+  color: black;
+  font: bold;
+}
+.k1,
+.k2,
+.k3,
+.k4,
+.k5 {
+  padding: 5px;
+}
+.k1:hover {
+  background-color: rgb(227, 215, 240);
+  border: solid 0.5px black;
+  border-radius: 20px;
+}
+
+.k2:hover {
+  background-color: rgb(227, 215, 240);
+  background-color: rgb(227, 215, 240);
+  border: solid 0.5px black;
+  border-radius: 20px;
+}
+
+.k3:hover {
+  background-color: rgb(227, 215, 240);
+  background-color: rgb(227, 215, 240);
+  border: solid 0.5px black;
+  border-radius: 20px;
+}
+
+.k4:hover {
+  background-color: rgb(227, 215, 240);
+  background-color: rgb(227, 215, 240);
+  border: solid 0.5px black;
+  border-radius: 20px;
+}
+
+.k5:hover {
+  background-color: rgb(227, 215, 240);
+  background-color: rgb(227, 215, 240);
+  border: solid 0.5px black;
+  border-radius: 20px;
+}
