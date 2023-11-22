@@ -3,27 +3,30 @@
   padding: 0;
 }
 #book {
-  width: 300px;
-  height: 441px;
-  padding: 10px;
-margin-top: 70px;
-
+ 
+ padding-left: 30px;
+  margin-top: 105px;
+   max-height: 400px;
+}
+.book{
+  max-height: 480px;
 }
 #name {
   width: 80%;
-
-  text-align: center;
+  margin-top: 70px;
+  margin-bottom: 30px;
   height: 30px;
   font-size: 29px;
   padding: 20px;
-  font-size: 24px;
-    font-weight: 500;
-    line-height: 30px;
+  font-size: 35px;
+  font-weight: 500;
+  line-height: 30px;
+ 
 }
 .allDiv {
   display: flex;
   justify-content: center;
-
+   align-items: center;
 }
 .mainDiv {
   display: flex;
@@ -32,14 +35,13 @@ margin-top: 70px;
 .info {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
   width: 100%;
 }
 .buttons {
   width: 100%;
   background: white;
   margin-left: 500px;
+
 }
 .buttons button {
   width: 100px;
@@ -61,51 +63,196 @@ margin-top: 70px;
     #003cc5 100%
   );
 }
-.optionsAndDescriptions {
-  display: flex;
-  width: 100%;
- 
-}
+
 .options {
   display: flex;
   flex-direction: column;
+  margin-top: 2px;
   width: 50%;
   background: rgb(255, 255, 255);
-  padding: 10px;
+ gap: 3px;
+ padding-left: 50px;
+
+ 
+}
+.bookId{
+  margin-bottom: 8px;
+  display: flex;
+  gap: 120px;
+  align-items: center;
+}
+.productTitle{
+  color:#707783;
+  font-size: 20px;
+  line-height: 24px;
+  width: 50%;
+
+}
+.productValue{
+  font-size: 20px;
+  color: #464958;
+  flex: 1 1 50%;
+  line-height: 24px;
+
+}
+.aut{
+  margin-bottom: 8px;
+  display: flex;
+  gap: 120px;
+  align-items: center;
+}
+.aut a{
+  color: #0b63f6;
+  font-size: 18px;
+}
+.author{
+  color:#707783;
+  font-size: 20px;
+  line-height: 24px;
+  width: 50%;
+}
+.categ{
+  margin-bottom: 8px;
+  display: flex;
+  gap: 120px;
+  align-items: center;
+}
+.category{
+  color:#707783;
+  font-size: 20px;
+  line-height: 24px;
+  width: 50%;
   
 }
-.options p {
-    font-size: 20px;
+.fantasy{
+  font-size: 20px;
+  color: #464958;
+  flex: 1 1 50%;
+  line-height: 24px;
+}
+.anons{
+  margin-bottom: 8px;
+  display: flex;
+  gap: 120px;
+  align-items: center;
+}
+.date{
+  color:#707783;
+  font-size: 20px;
+  line-height: 24px;
+  width: 50%;
+ 
+}
+.num{
+  font-size: 20px;
+  color: #464958;
+  flex: 1 1 50%;
+  line-height: 24px;
+  
+}
+.pages{
+  margin-bottom: 8px;
+  display: flex;
+  gap: 135px;
+  align-items: center;
+}
+.pagesCount{
+  color:#707783;
+  font-size: 20px;
+  line-height: 24px;
+  width: 50%;
+
+}
+.pagesNum{
+  font-size: 20px;
+  color: #464958;
+  flex: 1 1 50%;
+  line-height: 24px;
+
+}
+.type{
+  margin-bottom: 8px;
+  display: flex;
+  gap: 120px;
+  align-items: center;
+}
+.cover{
+  color:#707783;
+  font-size: 20px;
+  line-height: 24px;
+  width: 50%;
+
+}
+.coverOfBook{
+  font-size: 20px;
+  color: #464958;
+  flex: 1 1 50%;
+  line-height: 24px;
+
+}
+.interpreter{
+  margin-bottom: 8px;
+  display: flex;
+  gap: 60px;
+  align-items: center;
+}
+.interpreter a{
+  color: #0b63f6;
+  font-size: 18px;
+}
+.interpreterOfBook{
+  color:#707783;
+  font-size: 20px;
+  line-height: 24px;
+  width: 50%;
+
 }
 .description {
-  padding: 10px;
-  width: 100%;
-  background: rgb(51, 92, 153);
-  font-size: 16px;
-  color:white;
-  margin-top: 500px;
+ margin-top: 20px;
+  width: 50%;
+  padding-left: 5px;
+  font-size: 18px;
+  color:black;
+display: flex;
+padding-bottom: 200px;
 }
-.discreptionAndButtons {
-  flex-direction: column;
-  display: flex;
-  width: 80%;
+
+.text{
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+   padding-left: 5px;
 }
-.btn{
+.btn {
   margin-bottom: 8px;
   margin-top: 20px;
   display: flex;
+ padding-top: 10px;
+ padding-left: 5px;
   flex-direction: column;
-  padding: 15px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
 }
-.h1{
+.h1 {
   margin: 15px;
 }
-.btn2{
+.btn2 {
   margin-bottom: 8px;
 }
-#car{
+#car {
   width: 22px;
   height: 22px;
   padding-right: 5px;
   padding-top: 5px;
+}
+#point {
+  padding-top: 5px;
+  width: 20px;
+  height: 20px;
+}
+
+.optionsAndButtons{
+  display: flex;
+  justify-content: space-between;
 }
