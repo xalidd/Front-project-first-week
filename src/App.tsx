@@ -4,6 +4,7 @@ import styles from "./header.module.css";
 import FullPage from "./components/FullPage/Index"
 import { Route, Routes } from "react-router-dom";
 import Home from "./components/Home";
+import MyBooks from "./components/MyBooks";
 
 function App() {
   return (
@@ -14,7 +15,9 @@ function App() {
         <Routes>
           <Route path="/" element={<Home/>}/>
           <Route path="/books" element={<FullPage/>}/>
+          <Route path="/MyBooks" element={<MyBooks/>}/>
           сверху роут на 16 стр должен быть роут по айди нужно дополнить т.е. /books/booksId
+          
         </Routes>
       </div>
     </div>
