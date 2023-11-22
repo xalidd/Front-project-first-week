@@ -4,6 +4,7 @@ import book2 from "../../assets/book2.jpg";
 import book3 from "../../assets/book3.jpg";
 import book4 from "../../assets/book4.jpg";
 import style from "./bookShop.module.css";
+
 export const Books = () => {
   return (
     <div className={style.book}>

@@ -1,6 +1,6 @@
 import styles from "./FullPage.module.css";
 import bookim from "../../someimg/ведьмак.jpeg";
-
+import car from "../../assets/car.png"
 const FullPage = () => {
   return (
     <div className={styles.allDiv}>
@@ -22,9 +22,10 @@ const FullPage = () => {
                 <p>Переводчик: Вандам</p>
               </div>
               <div className={styles.buttons}>
-                <h2>1200р</h2>
-                <button>Купить сейчас</button>
-                <button>Добавить в корзину</button>
+                <h2 className={styles.h1}>1200р</h2>
+                <button className={styles.btn}>Купить сейчас</button>
+                <button className={styles.btn2}>Добавить в корзину</button>
+                <p> <img id={styles.car} src={car} alt="" />Доставка курьером, ага, а еще чего?</p>
               </div>
             </div>
             <div className={styles.description}>
