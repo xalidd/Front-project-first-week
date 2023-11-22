@@ -22,13 +22,19 @@ export const Header = () => {
         <div className={styles.navBar}>
           <ul>
             <li>
-              <a href="">Войти</a>{" "}
+              <button className={styles.btnNew2}>
+                <a href="">Войти</a>
+              </button>
             </li>
             <li>
-              <a href="">Мои книги</a>
+              <button className={styles.btnNew2}>
+                <a href="">Мои книги</a>
+              </button>
             </li>
             <li>
-              <a href="">Корзина</a>
+              <button className={styles.btnNew2}>
+                <a href="">Корзина</a>
+              </button>
             </li>
           </ul>
         </div>
@@ -36,21 +42,30 @@ export const Header = () => {
       <div className="downLine">
         <div className={styles.downNavBar}>
           <div className={styles.k1}>
-            <a href=""><b>Детективы</b></a>
+            <a href="">
+              <b>Детективы</b>
+            </a>
           </div>
           <div className={styles.k2}>
-            <a href=""><b>Боевик</b></a>
+            <a href="">
+              <b>Боевик</b>
+            </a>
           </div>
           <div className={styles.k3}>
-            <a href=""><b>Биография</b></a>
+            <a href="">
+              <b>Биография</b>
+            </a>
           </div>
           <div className={styles.k4}>
-            <a href=""><b>Фэнтези</b></a>
+            <a href="">
+              <b>Фэнтези</b>
+            </a>
           </div>
           <div className={styles.k5}>
-            <a href=""><b>Романы</b></a>
+            <a href="">
+              <b>Романы</b>
+            </a>
           </div>
-          
         </div>
       </div>
     </div>

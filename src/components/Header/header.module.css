@@ -7,6 +7,7 @@
 .wrapper {
   height: 120px;
   padding: 15px;
+  background-color: rgb(186, 243, 158);
 }
 .btnNew {
   text-align: center;
@@ -51,7 +52,6 @@ ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  background-color: ;
 }
 
 ul li {
@@ -63,16 +63,16 @@ ul li a {
   display: block;
   padding: 10px;
   text-decoration: none;
-  color: #333;
+  color: white;
   font-family: Arial, sans-serif;
   font-size: 16px;
 }
 
-ul li a:hover {
+/* ul li a:hover {
   background-color: rgb(227, 215, 240);
   border: solid 0.5px black;
   border-radius: 20px;
-}
+} */
 
 .navBar {
   width: 400px;
@@ -128,4 +128,29 @@ a {
   background-color: rgb(227, 215, 240);
   border: solid 0.5px black;
   border-radius: 20px;
+}
+
+
+
+.btnNew2 {
+  text-align: center;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  margin-left: 5px;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  border: none;
+  width: 120px;
+  height: 45px;
+  background-image: linear-gradient(
+    to right,
+    #00c576 0%,
+    #098f59 51%,
+    #06804f 100%
+  );
+}
+
+.btnNew2:hover {
+  background-position: right center;
 }

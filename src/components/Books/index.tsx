@@ -1,27 +1,41 @@
 import React from "react";
-import book1 from "../assets/book1.jpg";
-import book2 from "../assets/book2.jpg";
-import book3 from "../assets/book3.jpg";
-import book4 from "../assets/book4.jpg";
-import style from "./bookShop.module.css"
+import book1 from "../../assets/book1.jpg";
+import book2 from "../../assets/book2.jpg";
+import book3 from "../../assets/book3.jpg";
+import book4 from "../../assets/book4.jpg";
+// import zvezda from "../../assets/zvezda.png";
+import style from "./bookShop.module.css";
+
 export const Books = () => {
   return (
     <div className={style.book}>
       <div>
         <img src={book1} alt="" sizes="" srcset="" />
-         Нигиль
+        Нигиль
       </div>
       <div>
         <img src={book2} alt="" sizes="" srcset="" />
-         Совсем неглавная героиня
+        Совсем неглавная героиня
       </div>
       <div>
-      <img src={book3} alt="" sizes="" srcset="" />
-     Голос твоего рода
+        <img src={book3} alt="" sizes="" srcset="" />
+        Голос твоего рода
       </div>
-      <div>
-      <img src={book4} alt="" sizes="" srcset="" />
-      Конкистадор поневоле
+      <div className={style.konkistador}>
+        <img src={book4} alt="" sizes="" srcset="" />
+        <div className="mainPrice">
+          <div className={style.lastPrice}>1300  ₽</div>
+          <div className={style.newPrice}>
+            <div className={style.actualPrice}><b>Цена: 900 руб</b>  </div>
+            <div className={style.Sale}><b>25%</b></div>
+
+          </div>
+        </div>
+        <div className={style.bookName}> Конкистадор поневоле</div>
+        <div className={style.author}>Автор:Михаил Михеев</div>
+
+        <button className={style.byeBook}>Купить</button>
+
       </div>
     </div>
   );
