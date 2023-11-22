@@ -1,0 +1,41 @@
+.book {
+    padding-left: 5%;
+    display: flex;
+   
+}
+
+.title {
+    padding-left: 10%;
+}
+.title1 {
+    padding-top: 14%;
+    font-size: 22px;
+    color: #31a3c3e8;
+}
+.title2 {
+    padding-top: 10%;
+    color: #707783;
+}
+
+.img {
+    padding-top: 2%;
+    width: 220px;
+}
+
+.text_p {
+    width: 50%;
+    margin: auto;
+    font-size: 21px;
+}
+
+.text_h1 {
+    padding-left: 2%;
+    color: #31a3c3e8;
+}
+
+.text_p {
+    
+    border-radius: 6px;
+    overflow-y: auto;
+    height: 300px;
+}

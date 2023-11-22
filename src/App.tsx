@@ -4,6 +4,7 @@ import styles from "./header.module.css";
 import FullPage from "./components/FullPage/Index"
 import { Route, Routes } from "react-router-dom";
 import Home from "./components/Home";
+import MyBooks from "./components/MyBooks";
 import SignUp from "./components/SignUp";
 import SingIn from "./components/SingIn";
 import { useEffect } from "react";
@@ -25,6 +26,9 @@ function App() {
         <Routes>
           <Route path="/" element={<Home/>}/>
           <Route path="/books" element={<FullPage/>}/>
+          <Route path="/MyBooks" element={<MyBooks/>}/>
+          сверху роут на 16 стр должен быть роут по айди нужно дополнить т.е. /books/booksId
+          
           <Route path="/signup" element={<SignUp/>}/>
           <Route path="/signin" element={<SingIn/>}/>
         </Routes>
