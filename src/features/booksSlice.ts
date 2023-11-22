@@ -3,10 +3,8 @@ import { builders } from "prettier/doc.js";
 
 
 const initialState = {
-
     books: [],
     error: null,
-
 }
 
 export const fetchBooks = createAsyncThunk(
@@ -18,13 +16,14 @@ export const fetchBooks = createAsyncThunk(
           method: 'GET',
           
         });
-  
+        
         const books = await res.json();
   
         if (books.error) {
           return thunkAPI.rejectWithValue(books.error);
         }
-  
+        
+        
         return books;
       } catch (e) {
         thunkAPI.rejectWithValue(e);
