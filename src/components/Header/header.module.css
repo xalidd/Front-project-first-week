@@ -19,6 +19,7 @@
   border: none;
   width: 120px;
   height: 45px;
+  cursor: pointer;
   background-image: linear-gradient(
     to right,
     #003cc5 0%,
@@ -51,7 +52,7 @@ ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  background-color: ;
+  background-color: 
 }
 
 ul li {

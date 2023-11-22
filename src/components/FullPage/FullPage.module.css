@@ -3,22 +3,27 @@
   padding: 0;
 }
 #book {
-  width: 345px;
+  width: 300px;
   height: 441px;
   padding: 10px;
+margin-top: 70px;
+
 }
 #name {
   width: 80%;
-  background-color: red;
+
   text-align: center;
   height: 30px;
   font-size: 29px;
   padding: 20px;
+  font-size: 24px;
+    font-weight: 500;
+    line-height: 30px;
 }
 .allDiv {
   display: flex;
   justify-content: center;
-  background: rgb(176, 199, 218);
+
 }
 .mainDiv {
   display: flex;
@@ -32,26 +37,42 @@
   width: 100%;
 }
 .buttons {
-  width: 50%;
-  background: antiquewhite;
+  width: 100%;
+  background: white;
+  margin-left: 500px;
 }
 .buttons button {
   width: 100px;
-  height: 50px;
   text-align: center;
-  border-radius: 5px;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  margin-left: 5px;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
   border: none;
+  width: 120px;
+  height: 45px;
+  cursor: pointer;
+  background-image: linear-gradient(
+    to right,
+    #003cc5 0%,
+    #0b63f6 51%,
+    #003cc5 100%
+  );
 }
 .optionsAndDescriptions {
   display: flex;
-  width: 50%;
+  width: 100%;
+ 
 }
 .options {
   display: flex;
   flex-direction: column;
   width: 50%;
-  background: rosybrown;
+  background: rgb(255, 255, 255);
   padding: 10px;
+  
 }
 .options p {
     font-size: 20px;
@@ -59,11 +80,32 @@
 .description {
   padding: 10px;
   width: 100%;
-  background: rebeccapurple;
+  background: rgb(51, 92, 153);
   font-size: 16px;
+  color:white;
+  margin-top: 500px;
 }
 .discreptionAndButtons {
   flex-direction: column;
   display: flex;
   width: 80%;
+}
+.btn{
+  margin-bottom: 8px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+}
+.h1{
+  margin: 15px;
+}
+.btn2{
+  margin-bottom: 8px;
+}
+#car{
+  width: 22px;
+  height: 22px;
+  padding-right: 5px;
+  padding-top: 5px;
 }
