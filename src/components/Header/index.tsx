@@ -8,25 +8,27 @@ import { useDispatch, useSelector } from "react-redux";
 import { exit } from "../../features/applicationSlice";
 
 export const Header = () => {
-  const dispatch = useDispatch()
-  const image = useSelector(state => state.application.user.avatar)
-  const num = useSelector(state => state.application)
+  const dispatch = useDispatch();
+  const image = useSelector((state) => state.application.user.avatar);
+  const num = useSelector((state) => state.application);
   console.log(num);
-  
-  const token = useSelector(state => state.application.token)
-  const user = useSelector(state => state.application.user.login)
+
+  const token = useSelector((state) => state.application.token);
+  const user = useSelector((state) => state.application.user.login);
 
   const handleClose = () => {
-    dispatch(exit())
-  }
-  if(!token) {
+    dispatch(exit());
+  };
+  if (!token) {
     return (
       <div className={styles.wrapper}>
         <div className={styles.upLine}>
           <div className={styles.logo}>
-            <Link to={"/"}><img src={logo} alt="" width={70} height={70} /></Link>
+            <Link to={"/"}>
+              <img src={logo} alt="" width={70} height={70} />
+            </Link>
           </div>
-  
+
           <div className="searchForma">
             <input
               placeholder="Введите название книги или автора"
@@ -44,53 +46,62 @@ export const Header = () => {
                 <a href="">Мои книги</a>
               </li>
               <li>
+                <a href="">Закладки</a>
+              </li>
+              <li>
                 <a href="">Корзина</a>
               </li>
             </ul>
           </div>
         </div>
-        <Categories/>
+        <Categories />
       </div>
     );
   }
   return (
     <div className={styles.wrapper}>
-        <div className={styles.upLine}>
-          <div className={styles.logo}>
-            <Link to={"/"}><img src={logo} alt="" width={70} height={70} /></Link>
-          </div>
-  
-          <div className="searchForma">
-            <input
-              placeholder="Введите название книги или автора"
-              className={styles.search}
-              type="text"
-            />
-            <button className={styles.btnNew}>Найти</button>
-          </div>
-          <div className={styles.navBar}>
-            <ul>
-              <li>
-                <img className={styles.img_logo} src={`http://localhost:3040/${image}`} alt="" />
-              </li>
-              <li >
-                <span className={styles.name}>{user}</span>
-              </li>
-              <li>
-                <button onClick={handleClose}>Выйти</button>
-              </li>
-              <li>
-                <a href="">Мои книги</a>
-              </li>
-              <li>
-                <a href="">Корзина</a>
-              </li>
-            </ul>
-          </div>
+      <div className={styles.upLine}>
+        <div className={styles.logo}>
+          <Link to={"/"}>
+            <img src={logo} alt="" width={70} height={70} />
+          </Link>
         </div>
-        <Categories/>
+
+        <div className="searchForma">
+          <input
+            placeholder="Введите название книги или автора"
+            className={styles.search}
+            type="text"
+          />
+          <button className={styles.btnNew}>Найти</button>
+        </div>
+        <div className={styles.navBar}>
+          <ul>
+            <li>
+              <img
+                className={styles.img_logo}
+                src={`http://localhost:3040/${image}`}
+                alt=""
+              />
+            </li>
+            <li>
+              <span className={styles.name}>{user}</span>
+            </li>
+            <li>
+              <button onClick={handleClose}>Выйти</button>
+            </li>
+            <li>
+              <a href="">Мои книги</a>
+            </li>
+            <li>
+              <a href="">Корзина</a>
+            </li>
+          </ul>
+        </div>
       </div>
-  )
+      <Categories />
+    </div>
+  );
 };
 
 export default Header;
