@@ -1,0 +1,40 @@
+.mainDiv {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.root {
+  border-radius: 20px;
+  background-color: #459efa;
+  width: 50%;
+  height: 50px;
+  margin: 15px;
+  overflow: hidden;
+  transition: 0.5s; /* Время эффекта */
+  display: flex;
+  &:hover {
+    transform: scale(1.05);
+  }
+  li {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    cursor: pointer;
+    margin: 0;
+    &:hover {
+      background-color: #1562ff;
+      border-radius: 10px;
+      box-shadow: 0px 0px 6px 3px rgba(0, 0, 255, 0.2);
+    }
+  }
+  a {
+    display: flex;
+    color: white;
+    &:hover {
+      background-color: #1562ff;
+      border: none;
+    }
+  }
+}

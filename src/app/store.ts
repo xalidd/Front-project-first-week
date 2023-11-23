@@ -9,5 +9,6 @@ export const store = configureStore({
         categories,
         books,
         comments
-    }
+    },
+    devTools: true,
 })
