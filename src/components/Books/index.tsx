@@ -2,8 +2,7 @@ import basket from "../../assets/basket.png";
 import style from "./Books.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchBooks } from "../../features/booksSlice";
-
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useEffect, useMemo } from "react";
 import Pagination from "../Pagination/Index";
 
@@ -42,24 +41,24 @@ export const Books = () => {
   });
   return (
     <>
-      <div className={style.book}>
-        {choosedBook.map((item, i) => (
-          <div className={style.book_nom1}>
-            <img src={item.image} alt="" sizes="" srcset="" />
-            <div className={style.line_1}>
-              <div className="left">
-                <span className={style.oldPrice}>1450 ₽</span>
-                <span className={style.actuaclPrice}>{item.price}</span>
-              </div>
-              <div className={style.right}>
-                <span className={style.sale}>20%</span>
-              </div>
+
+    <div className={style.book}>
+      {choosedBook.map((item, i) => (
+        <div className={style.book_nom1}>
+          <Link to={`/books/${item._id}`}><img src={item.image} alt="" sizes="" srcset="" /></Link>
+          <div className={style.line_1}>
+            <div className="left">
+              <span className={style.oldPrice}>1450 ₽</span>
+              <span className={style.actuaclPrice}>{item.price}</span>
+            </div>
+            <div className={style.right}>
+              <span className={style.sale}>20%</span>
             </div>
 
-            <div className={style.line_2}>
-              <div className={style.title_head}>{item.name}</div>
-              <div className={style.title_author}>{item.author}</div>
-            </div>
+          <div className={style.line_2}>
+            <div className={style.title_head}><Link to={`/books/${item._id}`}>{item.name}</Link></div>
+            <div className={style.title_author}>{item.author}</div>
+          </div>
 
             <div className={style.line_3}>
               <button className={style.btn_bye}>Купить</button>

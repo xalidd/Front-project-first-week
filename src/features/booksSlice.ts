@@ -23,7 +23,8 @@ export const fetchBooks = createAsyncThunk(
       if (books.error) {
         return thunkAPI.rejectWithValue(books.error);
       }
-
+      console.log(books);
+      
       return books;
     } catch (e) {
       thunkAPI.rejectWithValue(e);
