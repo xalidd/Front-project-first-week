@@ -2,8 +2,7 @@ import basket from "../../assets/basket.png";
 import style from "./Books.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchBooks } from "../../features/booksSlice";
-
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useEffect, useMemo } from "react";
 import Pagination from "../Pagination/Index";
 
@@ -35,7 +34,7 @@ export const Books = () => {
     <div className={style.book}>
       {perPageBooks.map((item, i) => (
         <div className={style.book_nom1}>
-          <img src={item.image} alt="" sizes="" srcset="" />
+          <Link to={`/books/${item._id}`}><img src={item.image} alt="" sizes="" srcset="" /></Link>
           <div className={style.line_1}>
             <div className="left">
               <span className={style.oldPrice}>1450 ₽</span>
@@ -47,7 +46,7 @@ export const Books = () => {
           </div>
 
           <div className={style.line_2}>
-            <div className={style.title_head}>{item.name}</div>
+            <div className={style.title_head}><Link to={`/books/${item._id}`}>{item.name}</Link></div>
             <div className={style.title_author}>{item.author}</div>
           </div>
 
