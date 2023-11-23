@@ -63,6 +63,7 @@ const FullPage = () => {
               </p>
             </div>
           </div>
+          <div className={styles.textAndDisription}>
           <div className={styles.text}>Описание книги</div>
           <div className={styles.description}>
             Новеллы о ведьмаке Геральте из Ривии, его друзьях и недругах, о
@@ -74,6 +75,7 @@ const FullPage = () => {
             игр, уже во второй раз появляется на телеэкранах. Смотрите
             экранизацию великолепной саги и сравнивайте приключения любимого
             героя в кинематографическом и литературном мирах!
+          </div>
           </div>
         </div>
       </div>
