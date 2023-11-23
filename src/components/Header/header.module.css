@@ -52,7 +52,7 @@ ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  background-color: 
+  background-color: ;
 }
 
 ul li {
@@ -82,25 +82,33 @@ ul li a:hover {
 .downNavBar {
   display: flex;
   justify-content: center;
-  gap: 10px;
+  /* gap: 10px; */
   font-size: 20px;
+  margin-top: 10px;
 }
 a {
   text-decoration: none;
   color: black;
-  font: bold;
 }
-.k1,
-.k2,
-.k3,
-.k4,
-.k5 {
-  padding: 5px;
+.k1 {
+  padding: 10px;
+  width: 143px;
+  background: gold;
+  height: 27px;
+  text-align: center;
+  font-size: 17.2px;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: -10px;
+  border: solid 1px #908759;
+  transition: all 0.15s ease-in-out;
 }
 .k1:hover {
-  background-color: rgb(227, 215, 240);
-  border: solid 0.5px black;
-  border-radius: 20px;
+  width: 160px;
+  background: rgb(255 224 0);
 }
 
 .k2:hover {
