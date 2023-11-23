@@ -11,8 +11,6 @@ export const Header = () => {
   const dispatch = useDispatch();
   const image = useSelector((state) => state.application.user.avatar);
   const num = useSelector((state) => state.application);
-  console.log(num);
-
   const token = useSelector((state) => state.application.token);
   const user = useSelector((state) => state.application.user.login);
 
