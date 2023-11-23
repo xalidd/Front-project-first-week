@@ -80,9 +80,11 @@ const FullPage = () => {
               </p>
             </div>
           </div>
+          <div className={styles.textAndDisription}>
           <div className={styles.text}>Описание книги</div>
           <div className={styles.description}>
             {cart.description}
+          </div>
           </div>
         </div>
       </div>
