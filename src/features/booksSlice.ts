@@ -7,6 +7,7 @@ const initialState = {
   currentPage: 1,
   perPage: 8,
   inputValue: '',
+  bookInBasket: []
 };
 
 
@@ -43,6 +44,11 @@ const booksSlice = createSlice({
     changePage(state, action) {
       state.currentPage = action.payload;
     },
+    addBook(state, action) {
+      console.log(action.payload);
+      
+      state.bookInBasket.push(action.payload)
+    }
   },
   extraReducers: (builder) => {
     builder
@@ -56,5 +62,5 @@ const booksSlice = createSlice({
   },
 });
 
-export const { changePage, takeSearch } = booksSlice.actions;
+export const { changePage, takeSearch,addBook } = booksSlice.actions;
 export default booksSlice.reducer;

@@ -1,11 +1,24 @@
+.Busket {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(auto, 1fr);
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    margin: 0 auto;
+    width: 1200px;
+}
+
+.busketElements {
+  width: 280px;
+}
 #book{
     margin-top: 40px;
    
     width: 240px ;
 }
-.Busket {
+/* .Busket {
     padding-left: 30px;
-}
+} */
 .bookName{
     font-size: 22px;
     font-weight: 400;
