@@ -1,8 +1,35 @@
-import React from "react";
-import book5 from "../../assets/book5.jpg";
 import styles from "./myBooks.module.css";
+import book5 from "../../assets/book5.jpg";
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import { fetchComments, addComment } from "../../features/commentsSlice";
+import { RootState } from "../../features/booksSlice";
+import { useSelector, useDispatch } from "react-redux";
+import Comments from "./comments";
+import { fetchBooks } from "../../features/booksSlice";
 
 const MyBooks = () => {
+
+  console.log(styles);
+  
+  const dispatch = useDispatch();
+  const { id } = useParams();
+
+  const comments = useSelector((state: RootState) => state.comments.comments);
+
+  useEffect(() => {
+    dispatch(fetchBooks());
+    dispatch(fetchComments(id));
+  }, [dispatch, id]);
+
+  const [newComment, setNewComment] = useState("");
+
+  const handleAddComment = () => {
+    dispatch(addComment({ text: newComment, bookId: id }));
+
+    setNewComment("");
+  };
+
   return (
     <div className={styles.mybook}>
       {" "}
@@ -65,6 +92,31 @@ const MyBooks = () => {
             воздухе между нами повис вопрос без ответа. Почему Рейчел призналась
             в убийстве, которого не совершала?
           </p>
+        </div>
+      </div>
+      <div className={styles.formTop}>
+        <div className={styles.form_class}>
+          <form 
+            onSubmit={(e) => {
+              e.preventDefault();
+              handleAddComment();
+            }}
+          >
+            <input
+              className={styles.input}
+              type="text"
+              value={newComment}
+              onChange={(e) => setNewComment(e.target.value)}
+            />{" "}
+            {}
+            <button className={styles.add_com} type="submit">
+              добавить
+            </button>{" "}
+            {}
+          </form>
+        </div>
+        <div className={styles.main2}>
+          {comments?.map((item) => <Comments key={item._id} item={item} />)}
         </div>
       </div>
     </div>
