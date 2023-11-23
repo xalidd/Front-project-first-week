@@ -1,25 +1,31 @@
-import React, { useEffect } from "react";
-import book1 from "../../assets/book1.jpg";
-import book2 from "../../assets/book2.jpg";
-import book3 from "../../assets/book3.jpg";
-import book4 from "../../assets/book4.jpg";
 import basket from "../../assets/basket.png";
 import style from "./bookShop.module.css";
-import { useDispatch,useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { fetchBooks } from "../../features/booksSlice";
+import { useEffect, useMemo } from "react";
 
 export const Books = () => {
-  const dispatch = useDispatch()
-  
+  const dispatch = useDispatch();
+
+  // console.log(currentPage);
+
   useEffect(() => {
-    dispatch(fetchBooks())
-  }, [])
-  const books = useSelector(state => state.books.books)
-  console.log(books);
+    dispatch(fetchBooks());
+  }, []);
+  const books = useSelector((state) => state.books.books);
+  const currentPage = useSelector((state) => state.books.currentPage);
+  const perPage = useSelector((state) => state.books.perPage);
+  // console.log(books);
+
+  const perPageBooks = useMemo(() => {
+    return books.slice((currentPage * perPage) - perPage, currentPage * perPage);
+  }, [currentPage,books]);
+
+  console.log(perPageBooks);
   
   return (
     <div className={style.book}>
-    {books.map((item,i) => (
+      {perPageBooks.map((item, i) => (
         <div className={style.book_nom1}>
           <img src={item.image} alt="" sizes="" srcset="" />
           <div className={style.line_1}>
@@ -31,12 +37,12 @@ export const Books = () => {
               <span className={style.sale}>20%</span>
             </div>
           </div>
-  
+
           <div className={style.line_2}>
             <div className={style.title_head}>{item.name}</div>
             <div className={style.title_author}>Саша Карин</div>
           </div>
-  
+
           <div className={style.line_3}>
             <button className={style.btn_bye}>Купить</button>
             <button className={style.savaBook}>
@@ -44,12 +50,10 @@ export const Books = () => {
             </button>
           </div>
         </div>
-    ))
-  }
-  </div>
+      ))}
+    </div>
   );
 };
 function useSelectore() {
   throw new Error("Function not implemented.");
 }
-
