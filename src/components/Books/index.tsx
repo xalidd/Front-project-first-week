@@ -5,6 +5,7 @@ import { fetchBooks } from "../../features/booksSlice";
 import { Link, useParams } from "react-router-dom";
 import { useEffect, useMemo } from "react";
 import Pagination from "../Pagination/Index";
+import { addBook } from "../../features/booksSlice";
 
 export const Books = () => {
   const { categoryId } = useParams();
@@ -26,7 +27,7 @@ export const Books = () => {
       return item.categoryId._id === categoryId;
     })
   );
-
+//
   const fromInput = useSelector((state) => state.books.inputValue);
     console.log(fromInput);
     
@@ -40,6 +41,12 @@ export const Books = () => {
     }
     return false;
   });
+//
+
+
+const bookInbusket = useSelector(state => state.books.bookInBasket)
+console.log(bookInbusket);
+
   return (
     <>
       <div className={style.book}>
@@ -66,10 +73,7 @@ export const Books = () => {
             </div>
 
             <div className={style.line_3}>
-              <button className={style.btn_bye}>Купить</button>
-              <button className={style.savaBook}>
-                <img src={basket} alt="" width={24} height={24} />
-              </button>
+              <button className={style.btn_bye} onClick={() => dispatch(addBook(item))}>Добавить в корзину</button>
             </div>
           </div>
         ))}
@@ -83,3 +87,7 @@ export const Books = () => {
 function useSelectore() {
   throw new Error("Function not implemented.");
 }
+function pushBookBasket(): any {
+  throw new Error("Function not implemented.");
+}
+

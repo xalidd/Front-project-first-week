@@ -14,7 +14,7 @@ export const Header = () => {
   const num = useSelector((state) => state.application);
   const token = useSelector((state) => state.application.token);
   const user = useSelector((state) => state.application.user.login);
-
+  const bookInBasket = useSelector(state => state.books.bookInBasket)
   const handleClose = () => {
     dispatch(exit());
   };
@@ -40,7 +40,7 @@ export const Header = () => {
                 <a href="">Закладки</a>
               </li>
               <li>
-                <a href="">Корзина</a>
+              <Link to={"/busket"}>Корзина <span>{bookInBasket.length}</span></Link>
               </li>
             </ul>
           </div>
@@ -85,7 +85,7 @@ export const Header = () => {
               <a href="">Мои книги</a>
             </li>
             <li>
-              <a href="">Корзина</a>
+              <Link to={"/busket"}>Корзина</Link>
             </li>
           </ul>
         </div>
