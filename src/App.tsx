@@ -25,10 +25,9 @@ function App() {
       <div className="content">
         <Routes>
           <Route path="/" element={<Home/>}/>
+          <Route path="/category/:categoryId" element={<Home/>}/>
           <Route path="/books" element={<FullPage/>}/>
           <Route path="/MyBooks" element={<MyBooks/>}/>
-          сверху роут на 16 стр должен быть роут по айди нужно дополнить т.е. /books/booksId
-          
           <Route path="/signup" element={<SignUp/>}/>
           <Route path="/signin" element={<SingIn/>}/>
         </Routes>

@@ -1,27 +1,35 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styles from "./header.module.css";
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchCategories } from '../../features/categoriesSlice';
+import { Link } from 'react-router-dom';
 const Categories = () => {
+    const dispatch = useDispatch()
+    const categories = useSelector(state => state.categories.categories)
+    
+    useEffect(() => {
+        dispatch(fetchCategories())
+    },[])
     return (
+        <>
         <div className="downLine">
         <div className={styles.downNavBar}>
+        {categories.map((item) => {
+          if(item._id === "655f06e887a8a4647f40a422"){
+            return (
           <div className={styles.k1}>
-            <a href=""><b>Детективы</b></a>
-          </div>
-          <div className={styles.k2}>
-            <a href=""><b>Боевик</b></a>
-          </div>
-          <div className={styles.k3}>
-            <a href=""><b>Биография</b></a>
-          </div>
-          <div className={styles.k4}>
-            <a href=""><b>Фэнтези</b></a>
-          </div>
-          <div className={styles.k5}>
-            <a href=""><b>Романы</b></a>
-          </div>
-          
+            <Link to={"/"}><b>{item.text}</b></Link>
+          </div>)
+          }
+        return (
+          <div className={styles.k1}>
+          <Link to={`/category/${item._id}`}><b>{item.text}</b></Link>
         </div>
-      </div>
+        )
+})}
+        </div>
+        </div>
+        </>
     );
 };
 
