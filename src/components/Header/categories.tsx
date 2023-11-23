@@ -26,7 +26,7 @@ const Categories = () => {
           <Link to={`/category/${item._id}`}><b>{item.text}</b></Link>
         </div>
         )
-})}
+}).reverse()}
         </div>
         </div>
         </>

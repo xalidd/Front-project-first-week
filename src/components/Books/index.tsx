@@ -1,33 +1,37 @@
 import basket from "../../assets/basket.png";
-import style from "./bookShop.module.css";
+import style from "./Books.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchBooks } from "../../features/booksSlice";
 
 import { useParams } from "react-router-dom";
+import { useEffect, useMemo } from "react";
+import Pagination from "../Pagination/Index";
 
 export const Books = () => {
   const {categoryId} = useParams()
   
   const dispatch = useDispatch()
-  const books = useSelector((state) => state.books.books);
   const currentPage = useSelector((state) => state.books.currentPage);
   const perPage = useSelector((state) => state.books.perPage);
-  const perPageBooks = useMemo(() => {
-    return books.slice((currentPage * perPage) - perPage, currentPage * perPage);
-  }, [currentPage,books]);
   
   useEffect(() => {
     dispatch(fetchBooks())
   }, [])
+  
   const books = useSelector(state => state.books.books.filter((item)=> {
     if(!categoryId){
       return item
     }
-     return item.categoryId._id === categoryId
-
+    return item.categoryId._id === categoryId
+    
   }))
+
+  const perPageBooks = useMemo(() => {
+    return books.slice((currentPage * perPage) - perPage, currentPage * perPage);
+  }, [currentPage,books]);
   
   return (
+    <>
     <div className={style.book}>
       {perPageBooks.map((item, i) => (
         <div className={style.book_nom1}>
@@ -56,6 +60,10 @@ export const Books = () => {
         </div>
       ))}
     </div>
+      <div>
+      <Pagination books={books}/>
+      </div>
+      </>
   );
 };
 function useSelectore() {
