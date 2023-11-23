@@ -34,7 +34,7 @@ export const Books = () => {
   
           <div className={style.line_2}>
             <div className={style.title_head}>{item.name}</div>
-            <div className={style.title_author}>Саша Карин</div>
+            <div className={style.title_author}>{item.author}</div>
           </div>
   
           <div className={style.line_3}>
