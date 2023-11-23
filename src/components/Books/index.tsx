@@ -7,15 +7,24 @@ import basket from "../../assets/basket.png";
 import style from "./bookShop.module.css";
 import { useDispatch,useSelector } from "react-redux";
 import { fetchBooks } from "../../features/booksSlice";
+import { useParams } from "react-router-dom";
 
 export const Books = () => {
+  const {categoryId} = useParams()
+  
   const dispatch = useDispatch()
   
   useEffect(() => {
     dispatch(fetchBooks())
   }, [])
-  const books = useSelector(state => state.books.books)
-  console.log(books);
+  const books = useSelector(state => state.books.books.filter((item)=> {
+    if(!categoryId){
+      return item
+    }
+     return item.categoryId === categoryId
+
+  }))
+  
   
   return (
     <div className={style.book}>
