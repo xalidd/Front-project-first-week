@@ -6,6 +6,7 @@ const initialState = {
   error: null,
   currentPage: 1,
   perPage: 8,
+  inputValue: '',
 };
 
 
@@ -35,6 +36,10 @@ const booksSlice = createSlice({
   name: "books",
   initialState,
   reducers: {
+
+    takeSearch(state, action) {
+      state.inputValue = action.payload
+    },
     changePage(state, action) {
       state.currentPage = action.payload;
     },
@@ -51,5 +56,5 @@ const booksSlice = createSlice({
   },
 });
 
-export const { changePage } = booksSlice.actions;
+export const { changePage, takeSearch } = booksSlice.actions;
 export default booksSlice.reducer;

@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import Categories from "./categories";
 import { useDispatch, useSelector } from "react-redux";
 import { exit } from "../../features/applicationSlice";
+import Search from "../Search/Index";
 
 export const Header = () => {
   const dispatch = useDispatch();
@@ -26,15 +27,7 @@ export const Header = () => {
               <img src={logo} alt="" width={70} height={70} />
             </Link>
           </div>
-
-          <div className="searchForma">
-            <input
-              placeholder="Введите название книги или автора"
-              className={styles.search}
-              type="text"
-            />
-            <button className={styles.btnNew}>Найти</button>
-          </div>
+          <Search />
           <div className={styles.navBar}>
             <ul>
               <li>

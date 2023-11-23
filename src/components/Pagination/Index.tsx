@@ -6,7 +6,6 @@ import { changePage } from "../../features/booksSlice";
 import { useDispatch, useSelector } from "react-redux";
 
 const Pagination = ({books}) => {
-console.log(books);
 
 const dispatch = useDispatch()
 const perPage = useSelector((state) => state.books.perPage);

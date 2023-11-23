@@ -10,7 +10,6 @@ import { fetchBooks } from "../../features/booksSlice";
 
 const MyBooks = () => {
 
-  console.log(styles);
   
   const dispatch = useDispatch();
   const { id } = useParams();
