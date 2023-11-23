@@ -7,7 +7,7 @@ const initialState = {
 };
 
 export const fetchComments = createAsyncThunk(
-  "comments/fetchComments", // Исправлено: название должно соответствовать действию
+  "comments/fetchComments", 
   async (id, thunkAPI) => {
     try {
       const res = await fetch(`http://localhost:3040/comments/${id}`, {
@@ -22,13 +22,13 @@ export const fetchComments = createAsyncThunk(
 
       return comments;
     } catch (e) {
-      return thunkAPI.rejectWithValue(e); // Исправлено: добавлено ключевое слово return
+      return thunkAPI.rejectWithValue(e); 
     }
   }
 );
 
 export const addComment = createAsyncThunk(
-  "comments/addComment", // Исправлено: название должно соответствовать действию
+  "comments/addComment", 
   async ({ text, bookId }, thunkAPI) => {
     const token = thunkAPI.getState().application.token;
 
@@ -39,10 +39,10 @@ export const addComment = createAsyncThunk(
           "Content-Type": "application/json",
           Authorization: `Bearer ${token}`,
         },
-        body: JSON.stringify({text, bookId}), // Исправлено: передан объект newComment
+        body: JSON.stringify({text, bookId}), 
       });
 
-      const comments = await res.json(); // Исправлено: изменилось название переменной
+      const comments = await res.json(); 
 
       if (comments.error) {
         return thunkAPI.rejectWithValue(comments.error);
@@ -56,7 +56,7 @@ export const addComment = createAsyncThunk(
 );
 
 export const deleteComment = createAsyncThunk(
-  "comments/deleteComment", // Исправлено: название должно соответствовать действию
+  "comments/deleteComment", 
   async (id, thunkAPI) => {
     const token = thunkAPI.getState().application.token;
 
@@ -69,7 +69,7 @@ export const deleteComment = createAsyncThunk(
         },
       });
 
-      return id; // Возвращаем id после успешного удаления
+      return id; 
     } catch (e) {
       return thunkAPI.rejectWithValue(e);
     }
