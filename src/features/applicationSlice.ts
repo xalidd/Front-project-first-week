@@ -14,7 +14,6 @@ export const authSingUp = createAsyncThunk(
     async({login, password, avatar}, thunkAPI) => {
         try {
             const formData = new FormData()
-            console.log(avatar);
             
             formData.append('avatar', avatar)
             formData.append('login', login)
@@ -26,7 +25,6 @@ export const authSingUp = createAsyncThunk(
             })
             
             const date = await res.json()
-            console.log(date);
 
             if(date.error) {
                 return thunkAPI.rejectWithValue(date.error)
