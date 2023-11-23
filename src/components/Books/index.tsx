@@ -21,7 +21,7 @@ export const Books = () => {
     if(!categoryId){
       return item
     }
-     return item.categoryId === categoryId
+     return item.categoryId._id === categoryId
 
   }))
   
