@@ -27,10 +27,10 @@ export const Books = () => {
       return item.categoryId._id === categoryId;
     })
   );
-//
+  //
   const fromInput = useSelector((state) => state.books.inputValue);
-    console.log(fromInput);
-    
+  console.log(fromInput);
+
   const perPageBooks = useMemo(() => {
     return books.slice(currentPage * perPage - perPage, currentPage * perPage);
   }, [currentPage, books]);
@@ -41,11 +41,10 @@ export const Books = () => {
     }
     return false;
   });
-//
+  //
 
-
-const bookInbusket = useSelector(state => state.books.bookInBasket)
-console.log(bookInbusket);
+  const bookInbusket = useSelector((state) => state.books.bookInBasket);
+  console.log(bookInbusket);
 
   return (
     <>
@@ -53,27 +52,34 @@ console.log(bookInbusket);
         {choosedBook.map((item, i) => (
           <div className={style.book_nom1}>
             <Link to={`/books/${item._id}`}>
-              <img src={item.image} alt="" sizes="" srcset="" />
+              <img src={item.image} alt="" />
             </Link>
-            <div className={style.line_1}>
-              <div className="left">
-                <span className={style.oldPrice}>1450 ₽</span>
-                <span className={style.actuaclPrice}>{item.price}</span>
+            <div className={style.infoBlock}>
+              <div className={style.line_1}>
+                <div className={style.price}>
+                  <span className={style.oldPrice}>1450 руб.</span>
+                  <span className={style.actuaclPrice}>{item.price} руб.</span>
+                </div>
+                <div className={style.right}>
+                  <span className={style.sale}>20%</span>
+                </div>
               </div>
-              <div className={style.right}>
-                <span className={style.sale}>20%</span>
-              </div>
-            </div>
 
-            <div className={style.line_2}>
-              <div className={style.title_head}>
-                <Link to={`/books/${item._id}`}>{item.name}</Link>
+              <div className={style.line_2}>
+                <div className={style.title_head}>
+                  <Link to={`/books/${item._id}`}>{item.name}</Link>
+                </div>
+                <div className={style.title_author}>{item.author}</div>
               </div>
-              <div className={style.title_author}>{item.author}</div>
-            </div>
 
-            <div className={style.line_3}>
-              <button className={style.btn_bye} onClick={() => dispatch(addBook(item))}>Добавить в корзину</button>
+              <div className={style.line_3}>
+                <button
+                  className={style.btn_bye}
+                  onClick={() => dispatch(addBook(item))}
+                >
+                  Добавить в корзину
+                </button>
+              </div>
             </div>
           </div>
         ))}
@@ -90,4 +96,3 @@ function useSelectore() {
 function pushBookBasket(): any {
   throw new Error("Function not implemented.");
 }
-

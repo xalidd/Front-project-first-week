@@ -7,6 +7,7 @@ import Categories from "./categories";
 import { useDispatch, useSelector } from "react-redux";
 import { exit } from "../../features/applicationSlice";
 import Search from "../Search/Index";
+import logoMyBooks from "../../img/open.png";
 
 export const Header = () => {
   const dispatch = useDispatch();
@@ -14,7 +15,7 @@ export const Header = () => {
   const num = useSelector((state) => state.application);
   const token = useSelector((state) => state.application.token);
   const user = useSelector((state) => state.application.user.login);
-  const bookInBasket = useSelector(state => state.books.bookInBasket)
+  const bookInBasket = useSelector((state) => state.books.bookInBasket);
   const handleClose = () => {
     dispatch(exit());
   };
@@ -31,16 +32,21 @@ export const Header = () => {
           <div className={styles.navBar}>
             <ul>
               <li>
-                <Link to={"signup"}>Регистрация</Link>
+                <Link to={"signup"}></Link>
               </li>
               <li>
-                <a href="">Мои книги</a>
+                <div className={styles.divLogoMyBooks}>
+                  <img src={logoMyBooks} alt="" />
+                  <a href="">Мои книги</a>
+                </div>
               </li>
               <li>
                 <a href="">Закладки</a>
               </li>
               <li>
-              <Link to={"/busket"}>Корзина <span>{bookInBasket.length}</span></Link>
+                <Link to={"/busket"}>
+                  Корзина <span>{bookInBasket.length}</span>
+                </Link>
               </li>
             </ul>
           </div>
