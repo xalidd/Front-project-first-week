@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import styles from "./header.module.css";
+import styles from "../Header/Categories.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchCategories } from "../../features/categoriesSlice";
 import { Link } from "react-router-dom";

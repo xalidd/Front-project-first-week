@@ -1,0 +1,69 @@
+.downNavBar {
+    display: flex;
+    justify-content: center;
+    /* gap: 10px; */
+    font-size: 20px;
+    margin-top: 10px;
+  }
+  a {
+    text-decoration: none;
+    color: black;
+  }
+  .k1 b {
+    font-weight: 100;
+  }
+  .k1 a {
+    width: 147px;
+  }
+  .k1 {
+    padding: 10px;
+    width: 170px;
+    background: gold;
+    height: 45px;
+    text-align: center;
+    font-size: 17.2px;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: -10px;
+    border: solid 1px #908759;
+    transition: all 0.15s ease-in-out;
+    border-right-width: 3.4px;
+  }
+  .k1:active {
+    background: rgb(255, 223, 39);
+  
+  }
+  .k1:hover {
+    width: 180px;
+  }
+  
+  .k2:hover {
+    background-color: rgb(227, 215, 240);
+    background-color: rgb(227, 215, 240);
+    border: solid 0.5px black;
+    border-radius: 20px;
+  }
+  
+  .k3:hover {
+    background-color: rgb(227, 215, 240);
+    background-color: rgb(227, 215, 240);
+    border: solid 0.5px black;
+    border-radius: 20px;
+  }
+  
+  .k4:hover {
+    background-color: rgb(227, 215, 240);
+    background-color: rgb(227, 215, 240);
+    border: solid 0.5px black;
+    border-radius: 20px;
+  }
+  
+  .k5:hover {
+    background-color: rgb(227, 215, 240);
+    background-color: rgb(227, 215, 240);
+    border: solid 0.5px black;
+    border-radius: 20px;
+  }
