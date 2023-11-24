@@ -1,7 +1,7 @@
 import React from "react";
 import logo from "../../img/logo.png";
 import back from "../../img/back.jpg";
-import styles from "./header.module.css";
+import styles from "../Header/header.module.css";
 import { Link } from "react-router-dom";
 import Categories from "./categories";
 import { useDispatch, useSelector } from "react-redux";

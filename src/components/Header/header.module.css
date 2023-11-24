@@ -77,66 +77,17 @@ ul li a:hover {
 
 .navBar {
   width: 400px;
+  background: rgb(217, 204, 204);
+  text-align: center;
+  display: flex;
+  align-items: center;
 }
 
 .downNavBar {
   display: flex;
   justify-content: center;
-  /* gap: 10px; */
   font-size: 20px;
   margin-top: 10px;
-}
-a {
-  text-decoration: none;
-  color: black;
-}
-.k1 {
-  padding: 10px;
-  width: 143px;
-  background: gold;
-  height: 27px;
-  text-align: center;
-  font-size: 17.2px;
-  border-top-left-radius: 30px;
-  border-bottom-left-radius: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: -10px;
-  border: solid 1px #908759;
-  transition: all 0.15s ease-in-out;
-}
-.k1:hover {
-  width: 160px;
-  background: rgb(255 224 0);
-}
-
-.k2:hover {
-  background-color: rgb(227, 215, 240);
-  background-color: rgb(227, 215, 240);
-  border: solid 0.5px black;
-  border-radius: 20px;
-}
-
-.k3:hover {
-  background-color: rgb(227, 215, 240);
-  background-color: rgb(227, 215, 240);
-  border: solid 0.5px black;
-  border-radius: 20px;
-}
-
-.k4:hover {
-  background-color: rgb(227, 215, 240);
-  background-color: rgb(227, 215, 240);
-  border: solid 0.5px black;
-  border-radius: 20px;
-}
-
-.k5:hover {
-  background-color: rgb(227, 215, 240);
-  background-color: rgb(227, 215, 240);
-  border: solid 0.5px black;
-  border-radius: 20px;
 }
 
 .img_logo {
