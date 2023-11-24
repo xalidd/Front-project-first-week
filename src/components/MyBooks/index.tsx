@@ -10,17 +10,20 @@ import { fetchBooks } from "../../features/booksSlice";
 
 const MyBooks = () => {
 
-  console.log(styles);
   
   const dispatch = useDispatch();
   const { id } = useParams();
 
-  const comments = useSelector((state: RootState) => state.comments.comments);
+  const { bookId } = useParams();
 
+ 
+
+  const comments = useSelector((state: RootState) => state.comments.comments);
   useEffect(() => {
     dispatch(fetchBooks());
     dispatch(fetchComments(id));
   }, [dispatch, id]);
+  console.log(comments)
 
   const [newComment, setNewComment] = useState("");
 
@@ -35,7 +38,7 @@ const MyBooks = () => {
       {" "}
       <h1 className={styles.text_h1}>Мои книги:</h1>
       <div className={styles.book}>
-        <img className={styles.img} src={book5} alt="" sizes="" srcset="" />
+        <img className={styles.img} src={book5} alt=""  />
         <div className={styles.title}>
           <div className={styles.title1}>Незванный гость</div>
           <div className={styles.title2}>Детективный роман. Триллер</div>
@@ -96,19 +99,21 @@ const MyBooks = () => {
       </div>
       <div className={styles.formTop}>
         <div className={styles.form_class}>
+        <textarea
+              className={styles.input}
+              type="text"
+              placeholder="оставьте ваш комментарий"
+              value={newComment}
+              onChange={(e) => setNewComment(e.target.value)}
+            />{" "}
+            {}
           <form 
             onSubmit={(e) => {
               e.preventDefault();
               handleAddComment();
             }}
           >
-            <input
-              className={styles.input}
-              type="text"
-              value={newComment}
-              onChange={(e) => setNewComment(e.target.value)}
-            />{" "}
-            {}
+            
             <button className={styles.add_com} type="submit">
               добавить
             </button>{" "}
