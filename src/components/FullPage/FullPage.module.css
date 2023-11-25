@@ -1,12 +1,12 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 #book {
- width: 240px;
- padding-left: 30px;
-  margin-top: 105px;
-  
+  width: 240px;
+  padding-left: 30px;
+  margin-top: 123px;
 }
 
 #name {
@@ -14,17 +14,16 @@
   margin-top: 70px;
   margin-bottom: 30px;
   height: 30px;
-  font-size: 29px;
-  padding-left: 30px;
-  font-size: 35px;
+  font-size: 45px;
+  padding-left: 250px;
   font-weight: 500;
   line-height: 30px;
- 
 }
 .allDiv {
   display: flex;
   justify-content: center;
-   align-items: center;
+  align-items: center;
+  margin-left: 100px;
 }
 .mainDiv {
   display: flex;
@@ -38,8 +37,13 @@
 .buttons {
   width: 100%;
   background: white;
-  margin-left: 500px;
+  margin-left: 100px;
+  padding-left: 60px;
+  padding-top: 50px;
+  border: 8px solid rgb(80, 131, 251);
 
+
+  margin-right: 100px;
 }
 .buttons button {
   width: 100px;
@@ -67,166 +71,154 @@
   flex-direction: column;
   margin-top: 2px;
   width: 50%;
-  background: rgb(255, 255, 255);
- gap: 3px;
- padding-left: 50px;
 
- 
+  gap: 3px;
+  padding-left: 50px;
 }
-.bookId{
+.bookId {
   margin-bottom: 8px;
   display: flex;
   gap: 120px;
   align-items: center;
 }
-.productTitle{
-  color:#707783;
+.productTitle {
+  color: #707783;
   font-size: 20px;
   line-height: 24px;
   width: 50%;
-
 }
-.productValue{
+.productValue {
   font-size: 20px;
   color: #464958;
   flex: 1 1 50%;
   line-height: 24px;
-
 }
-.aut{
+.aut {
   margin-bottom: 8px;
   display: flex;
   gap: 120px;
   align-items: center;
 }
-.aut a{
+.aut a {
   color: #0b63f6;
   font-size: 18px;
 }
-.author{
-  color:#707783;
+.author {
+  color: #707783;
   font-size: 20px;
   line-height: 24px;
   width: 50%;
 }
-.categ{
+.categ {
   margin-bottom: 8px;
   display: flex;
   gap: 120px;
   align-items: center;
 }
-.category{
-  color:#707783;
+.category {
+  color: #707783;
   font-size: 20px;
   line-height: 24px;
   width: 50%;
-  
 }
-.fantasy{
+.fantasy {
   font-size: 20px;
   color: #464958;
   flex: 1 1 50%;
   line-height: 24px;
 }
-.anons{
+.anons {
   margin-bottom: 8px;
   display: flex;
   gap: 120px;
   align-items: center;
 }
-.date{
-  color:#707783;
+.date {
+  color: #707783;
   font-size: 20px;
   line-height: 24px;
   width: 50%;
- 
 }
-.num{
+.num {
   font-size: 20px;
   color: #464958;
   flex: 1 1 50%;
   line-height: 24px;
-  
 }
-.pages{
+.pages {
   margin-bottom: 8px;
   display: flex;
   gap: 135px;
   align-items: center;
 }
-.pagesCount{
-  color:#707783;
+.pagesCount {
+  color: #707783;
   font-size: 20px;
   line-height: 24px;
   width: 50%;
-
 }
-.pagesNum{
+.pagesNum {
   font-size: 20px;
   color: #464958;
   flex: 1 1 50%;
   line-height: 24px;
-
 }
-.type{
+.type {
   margin-bottom: 8px;
   display: flex;
   gap: 120px;
   align-items: center;
 }
-.cover{
-  color:#707783;
+.cover {
+  color: #707783;
   font-size: 20px;
   line-height: 24px;
   width: 50%;
-
 }
-.coverOfBook{
+.coverOfBook {
   font-size: 20px;
   color: #464958;
   flex: 1 1 50%;
   line-height: 24px;
-
 }
-.interpreter{
+.interpreter {
   margin-bottom: 8px;
   display: flex;
   gap: 60px;
   align-items: center;
 }
-.interpreter a{
+.interpreter a {
   color: #0b63f6;
   font-size: 18px;
 }
-.interpreterOfBook{
-  color:#707783;
+.interpreterOfBook {
+  color: #707783;
   font-size: 20px;
   line-height: 24px;
   width: 50%;
-
 }
 .description {
- margin-top: 20px;
+  margin-top: 20px;
   width: 50%;
   padding-left: 5px;
-  font-size: 18px;
-  color:black;
-display: flex;
-padding-bottom: 200px;
+  font-size: 20px;
+  color: black;
+  display: flex;
+  padding-bottom: 200px;
 }
 
-.text{
-  font-size: 18px;
+.text {
+  font-size: 28px;
   font-weight: 400;
   line-height: 24px;
-   padding-left: 5px;
+  padding-left: 5px;
 }
 .btn {
   margin-bottom: 8px;
   margin-top: 20px;
   display: flex;
- padding-top: 10px;
- padding-left: 5px;
+  padding-top: 10px;
+  padding-left: 5px;
   flex-direction: column;
   font-size: 16px;
   font-weight: 400;
@@ -234,6 +226,8 @@ padding-bottom: 200px;
 }
 .h1 {
   margin: 15px;
+  text-decoration: underline rgb(0, 153, 255)
+
 }
 .btn2 {
   margin-bottom: 8px;
@@ -248,9 +242,14 @@ padding-bottom: 200px;
   padding-top: 5px;
   width: 20px;
   height: 20px;
+
 }
 
-.optionsAndButtons{
+.optionsAndButtons {
   display: flex;
-
+  margin-left: 100px;
 }
+.textAndDisription {
+  margin-left: -220px;
+}
+

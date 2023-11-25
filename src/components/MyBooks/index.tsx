@@ -28,7 +28,7 @@ const MyBooks = () => {
   const [newComment, setNewComment] = useState("");
 
   const handleAddComment = () => {
-    dispatch(addComment({ text: newComment, bookId: id }));
+    dispatch(addComment({ text: newComment, bookId: '655c7a388395c3bb02fb1ca1' }));
 
     setNewComment("");
   };

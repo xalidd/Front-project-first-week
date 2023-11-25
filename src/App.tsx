@@ -11,7 +11,7 @@ import { useEffect } from "react";
 import { getUser } from "./features/applicationSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { Busket } from "./components/Busket";
-
+import "./App.css"
 function App() {
   const dispatch = useDispatch()
   const token = useSelector(state => state.application.token)
@@ -27,7 +27,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home/>}/>
           <Route path="/category/:categoryId" element={<Home/>}/>
-          <Route path="/books" element={<FullPage/>}/>
+          <Route path="/books/:booksId" element={<FullPage/>}/>
           <Route path="/MyBooks" element={<MyBooks/>}/>
           <Route path="/signup" element={<SignUp/>}/>
           <Route path="/signin" element={<SingIn/>}/>
