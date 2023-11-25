@@ -2,31 +2,25 @@ import React, { useEffect, useState } from "react";
 import styles from "./busket.module.css";
 import book from "../../someimg/ведьмак.jpeg";
 import { useDispatch, useSelector } from "react-redux";
-import Modal from "./modal";
 import { addBook } from "../../features/booksSlice";
-import { addBookInBasket } from "../../features/basketSlica";
+import { addBookInBasket, fetchBasket } from "../../features/basketSlica";
+import { Link } from "react-router-dom";
 
 export const Busket = () => {
   const dispatch = useDispatch();
-  const bookInbusket = useSelector(state => state.basket.BooksInBasket)
+  
+  useEffect(() => {
+    dispatch(fetchBasket())
+  },[dispatch])
+  const bookInbusket = useSelector(state => state.basket.BooksInBasket.books)
   console.log(bookInbusket);
   
-  const [modal, setModal] = useState(false);
-
-  const handleSetModal = (modal) => {
-    console.log(book);
-    
-    setModal(modal);
-  };
-  // useEffect(() => {
-  //   dispatch(addBook());
-  // }, [dispatch]);
-
+  
   return (
     <>
       <h1>Корзина</h1>
       <div className={styles.Busket}>
-        {bookInbusket.map((book) => (
+        {bookInbusket?.map((book) => (
           <div className={styles.busketElements}>
             <div>
               <img id={styles.book} src={book.image} alt="" />
@@ -45,17 +39,15 @@ export const Busket = () => {
                 <div className={styles.title_author}>{book.author}</div>
               </div>
               <div className={styles.line_3}>
-                <button
+                <Link to={`/readbook/${book._id}`}
                   className={styles.btn_buy}
-                  onClick={() => handleSetModal(modal,book)}
                 >
-                  Купить
-                </button>
+                  Читать
+                </Link>
               </div>
             </div>
           </div>
         ))}
-        <div>{modal && <Modal handleSetModal={handleSetModal} />}</div>
       </div>
     </>
   );
