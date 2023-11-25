@@ -70,7 +70,7 @@ export const Books = () => {
             </div>
 
             <div className={style.line_3}>
-              <button className={style.btn_bye} onClick={() => dispatch(addBookInBasket(item._id))}>Добавить в корзину</button>
+              <button className={style.btn_bye} onClick={() => dispatch(addBookInBasket(item._id))}>Добавить книгу</button>
             </div>
           </div>
         ))}
@@ -88,3 +88,4 @@ function pushBookBasket(): any {
   throw new Error("Function not implemented.");
 }
 
+// dispatch(addBookInBasket(item._id))
