@@ -16,7 +16,6 @@ const MyBooks = () => {
 
   const comments = useSelector((state: RootState) => state.comments.comments);
 
-  const comments = useSelector((state: RootState) => state.comments.comments);
   useEffect(() => {
     dispatch(fetchBooks());
     dispatch(fetchComments(id));
