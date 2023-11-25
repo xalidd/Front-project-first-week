@@ -1,20 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "../../img/logo.png";
 import back from "../../img/back.jpg";
 import styles from "../Header/header.module.css";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import Categories from "./categories";
 import { useDispatch, useSelector } from "react-redux";
 import { exit } from "../../features/applicationSlice";
 import Search from "../Search/Index";
 
 export const Header = () => {
+  const [state, SetState] = useState(false);
   const dispatch = useDispatch();
   const image = useSelector((state) => state.application.user.avatar);
   const num = useSelector((state) => state.application);
   const token = useSelector((state) => state.application.token);
   const user = useSelector((state) => state.application.user.login);
-  const bookInBasket = useSelector(state => state.books.bookInBasket)
+  const bookInBasket = useSelector((state) => state.books.bookInBasket);
   const handleClose = () => {
     dispatch(exit());
   };
@@ -29,7 +30,7 @@ export const Header = () => {
           </div>
           <Search />
           <div className={styles.navBar}>
-            <ul>
+            {/* <ul>
               <li>
                 <Link to={"signup"}>Регистрация</Link>
               </li>
@@ -42,7 +43,19 @@ export const Header = () => {
               <li>
               <Link to={"/busket"}>Корзина <span>{bookInBasket.length}</span></Link>
               </li>
-            </ul>
+            </ul> */}
+            <Link to={"/signup"} className={styles.NavLink}>
+              Регистрация
+            </Link>
+            <Link className={styles.NavLink} to={"/#"}>
+              Мои книги
+            </Link>
+            <Link className={styles.NavLink} to={"/#"}>
+              Закладки
+            </Link>
+            <Link className={styles.NavLink} to={"/busket"}>
+              Корзина <span>{bookInBasket.length}</span>
+            </Link>
           </div>
         </div>
         <Categories />
