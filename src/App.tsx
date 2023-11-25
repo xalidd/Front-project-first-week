@@ -10,7 +10,7 @@ import SingIn from "./components/SingIn";
 import { useEffect } from "react";
 import { getUser } from "./features/applicationSlice";
 import { useDispatch, useSelector } from "react-redux";
-import { Busket } from "./components/Busket";
+import { Busket } from "./components/Busket/index";
 import "./App.css"
 function App() {
   const dispatch = useDispatch()

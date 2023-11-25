@@ -1,3 +1,9 @@
+* {
+  font-family: "AlergiaNormal-Regular", system-ui;
+  src: url("fonts/AlergiaNormal-Regular.ttf") format("truetype");
+  /* Другие свойства шрифта, если необходимо */
+}
+
 .book {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -19,28 +25,39 @@ span {
 }
 .book_nom1 {
   width: 100%;
-  height: 515px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  border-radius: 20px;
 }
 
 .book_nom1 a img {
   height: 330px;
+  border-radius: 20px;
 }
+.book_nom1:hover {
+  -webkit-box-shadow: 0px 5px 10px 2px rgba(222, 56, 173, 0.43);
+  -moz-box-shadow: 0px 5px 10px 2px rgba(222, 56, 173, 0.43);
+  box-shadow: 0px 5px 10px 2px rgba(34, 102, 211, 0.43);
+}
+
 .book_nom1 a img:hover {
-  border: 1px solid rgb(96, 95, 95);
+  border: 1px solid rgb(65, 25, 25);
 }
 
 .oldPrice {
   color: #707783;
   text-decoration: line-through;
   display: block;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 400;
   line-height: 20px;
   position: relative;
   white-space: nowrap;
 }
 .actuaclPrice {
-  font-size: 20px;
+  font-size: 23px;
   font-weight: 500;
   line-height: 26px;
   white-space: nowrap;
@@ -58,12 +75,14 @@ span {
   grid-area: price;
   justify-content: space-between;
   min-height: 46px;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 .right {
-  align-items: flex-end;
+  align-items: center;
   display: flex;
   grid-area: price;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   min-height: 46px;
 }
 .sale {
@@ -79,13 +98,19 @@ span {
 }
 
 .line_1 {
-  padding-bottom: 12px;
+  width: 100%;
 }
 
 .title_head {
-  font-size: 22px;
+  font-size: 19px;
+  padding-left: 5px;
+  padding-right: 5px;
   font-weight: 400;
   line-height: 24px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Замените на нужное количество строк */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 .title_head:hover {
   text-decoration: underline;
@@ -94,28 +119,110 @@ span {
 .title_author {
   color: #707783;
   display: -webkit-box;
-  font-size: 14px;
+  font-size: 16px;
+  padding-top: 7px;
 }
-
-.line_2 {
-  margin-bottom: 15px;
-}
-
 .btn_bye {
+  width: 100%;
+  height: 50px;
+  border: none;
+  outline: none;
+  color: #fff;
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  font-size: 19px;
+}
+
+.btn_bye:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+.btn_bye:active {
+  color: #000;
+}
+
+.btn_bye:active:after {
+  background: transparent;
+}
+
+.btn_bye:hover:before {
+  opacity: 1;
+}
+
+.btn_bye:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #111;
+  left: 0;
+  top: 0;
+  border-radius: 11px;
+}
+/* .btn_bye {
   background-color: #26a9e0;
   border: none;
   cursor: pointer;
   width: 100%;
   height: 35px;
-  border-radius: 5px;
+  border-radius: 18px;
   color: white;
-  margin-right: 8px;
-}
+  font-size: 19px; */
+
 .savaBook {
   border: none;
 }
+
 .line_3 {
   width: 100%;
   display: flex;
-  text-align: center
+  text-align: center;
+}
+.image {
+  border-radius: 20px;
+}
+
+.infoBlock {
+  height: 180px;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-between;
+}
+
+li img {
+  width: 50px;
+  height: 50px;
+}
+.divLogoMyBooks {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
