@@ -10,7 +10,7 @@ import SingIn from "./components/SingIn";
 import { useEffect } from "react";
 import { getUser } from "./features/applicationSlice";
 import { useDispatch, useSelector } from "react-redux";
-import { Busket } from "./components/Busket";
+import { Busket } from "./components/Busket/index";
 import "./App.css"
 function App() {
   const dispatch = useDispatch()
@@ -28,10 +28,10 @@ function App() {
           <Route path="/" element={<Home/>}/>
           <Route path="/category/:categoryId" element={<Home/>}/>
           <Route path="/books/:booksId" element={<FullPage/>}/>
-          <Route path="/MyBooks" element={<MyBooks/>}/>
+          <Route path="/readbook/:id" element={<MyBooks/>}/>
           <Route path="/signup" element={<SignUp/>}/>
           <Route path="/signin" element={<SingIn/>}/>
-          <Route path="/busket" element={<Busket/>}/>
+          <Route path="/mybook" element={<Busket/>}/>
         </Routes>
       </div>
     </div>

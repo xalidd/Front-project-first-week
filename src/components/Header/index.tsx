@@ -1,14 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "../../img/logo.png";
 import back from "../../img/back.jpg";
-import styles from "./header.module.css";
-import { Link } from "react-router-dom";
+import styles from "../Header/header.module.css";
+import { Link, NavLink } from "react-router-dom";
 import Categories from "./categories";
 import { useDispatch, useSelector } from "react-redux";
 import { exit } from "../../features/applicationSlice";
 import Search from "../Search/Index";
+import { fetchBasket } from "../../features/basketSlica";
 
 export const Header = () => {
+  const [state, SetState] = useState(false);
   const dispatch = useDispatch();
   const image = useSelector((state) => state.application.user.avatar);
   const num = useSelector((state) => state.application);
@@ -16,10 +18,14 @@ export const Header = () => {
 
   const token = useSelector((state) => state.application.token);
   const user = useSelector((state) => state.application.user.login);
-  const bookInBasket = useSelector(state => state.books.bookInBasket)
+  
+  const bookInbusket = useSelector(state => state.basket.BooksInBasket)
+  
   const handleClose = () => {
     dispatch(exit());
   };
+  const bookInBasket = useSelector(state => state.basket)
+  console.log(bookInBasket);
   if (!token) {
     return (
       <div className={styles.wrapper}>
@@ -31,7 +37,7 @@ export const Header = () => {
           </div>
           <Search />
           <div className={styles.navBar}>
-            <ul>
+            {/* <ul>
               <li>
                 <Link to={"signup"}>Регистрация</Link>
               </li>
@@ -42,9 +48,15 @@ export const Header = () => {
                 <a href="">Закладки</a>
               </li>
               <li>
-              <Link to={"/busket"}>Корзина <span>{bookInBasket.length}</span></Link>
+              <Link to={"/busket"}>Корзина <span>{bookInbusket.length}</span></Link>
               </li>
-            </ul>
+            </ul> */}
+            <Link to={"/signup"} className={styles.NavLink}>
+              Регистрация
+            </Link>
+            <Link className={styles.NavLink} to={"/signup"}>
+            Мои книги 
+            </Link>
           </div>
         </div>
         <Categories />
@@ -84,10 +96,7 @@ export const Header = () => {
               <button onClick={handleClose}>Выйти</button>
             </li>
             <li>
-              <a href="">Мои книги</a>
-            </li>
-            <li>
-              <Link to={"/busket"}>Корзина</Link>
+              <Link to={"/mybook"}>Мои книги<span>{bookInBasket.length}</span></Link>
             </li>
           </ul>
         </div>

@@ -6,6 +6,7 @@ import { Link, useParams } from "react-router-dom";
 import { useEffect, useMemo } from "react";
 import Pagination from "../Pagination/Index";
 import { addBook } from "../../features/booksSlice";
+import { addBookInBasket } from "../../features/basketSlica";
 
 export const Books = () => {
   const { categoryId } = useParams();
@@ -43,10 +44,6 @@ export const Books = () => {
   });
 //
 
-
-const bookInbusket = useSelector(state => state.books.bookInBasket)
-console.log(bookInbusket);
-
   return (
     <>
       <div className={style.book}>
@@ -73,7 +70,7 @@ console.log(bookInbusket);
             </div>
 
             <div className={style.line_3}>
-              <button className={style.btn_bye} onClick={() => dispatch(addBook(item))}>Добавить в корзину</button>
+              <button className={style.btn_bye} onClick={() => dispatch(addBookInBasket(item._id))}>Добавить книгу</button>
             </div>
           </div>
         ))}
@@ -91,3 +88,4 @@ function pushBookBasket(): any {
   throw new Error("Function not implemented.");
 }
 
+// dispatch(addBookInBasket(item._id))
