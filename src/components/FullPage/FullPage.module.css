@@ -3,19 +3,20 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 #book {
   width: 240px;
   padding-left: 30px;
-  margin-top: 123px;
+  margin-top: 100px;
 }
 
 #name {
-  width: 80%;
-  margin-top: 70px;
-  margin-bottom: 30px;
+  width: 600px;
+  margin-top: 20px;
+  margin-bottom: 40px;
   height: 30px;
-  font-size: 45px;
-  padding-left: 250px;
+  font-size: 35px;
+ margin-left: -210px;
   font-weight: 500;
   line-height: 30px;
 }
@@ -23,7 +24,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: 100px;
+  margin-left: 300px;
+  position: relative;
 }
 .mainDiv {
   display: flex;
@@ -32,18 +34,17 @@
 .info {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 850px;
 }
 .buttons {
-  width: 100%;
-  background: white;
-  margin-left: 100px;
-  padding-left: 60px;
-  padding-top: 50px;
-  border: 8px solid rgb(80, 131, 251);
+margin-top: -60px;
+display: flex;
+justify-content: flex-end;
+
+margin-right: 350px;
 
 
-  margin-right: 100px;
+
 }
 .buttons button {
   width: 100px;
@@ -52,40 +53,35 @@
   background-size: 200% auto;
   color: white;
   margin-left: 5px;
-  box-shadow: 0 0 20px #eee;
   border-radius: 10px;
   border: none;
   width: 120px;
   height: 45px;
   cursor: pointer;
-  background-image: linear-gradient(
-    to right,
-    #003cc5 0%,
-    #0b63f6 51%,
-    #003cc5 100%
-  );
+  background: #459efa;
 }
 
 .options {
-  display: flex;
+display: flex;
   flex-direction: column;
   margin-top: 2px;
-  width: 50%;
+  width: 400px;
+  flex-wrap: wrap;
 
-  gap: 3px;
-  padding-left: 50px;
 }
 .bookId {
   margin-bottom: 8px;
   display: flex;
   gap: 120px;
   align-items: center;
+border-bottom: 1px solid #000000;
 }
 .productTitle {
   color: #707783;
   font-size: 20px;
   line-height: 24px;
   width: 50%;
+
 }
 .productValue {
   font-size: 20px;
@@ -98,6 +94,7 @@
   display: flex;
   gap: 120px;
   align-items: center;
+  border-bottom: 1px solid #000000;
 }
 .aut a {
   color: #0b63f6;
@@ -114,6 +111,7 @@
   display: flex;
   gap: 120px;
   align-items: center;
+  border-bottom: 1px solid #000000;
 }
 .category {
   color: #707783;
@@ -132,6 +130,7 @@
   display: flex;
   gap: 120px;
   align-items: center;
+  border-bottom: 1px solid #000000;
 }
 .date {
   color: #707783;
@@ -150,6 +149,7 @@
   display: flex;
   gap: 135px;
   align-items: center;
+  border-bottom: 1px solid #000000;
 }
 .pagesCount {
   color: #707783;
@@ -168,6 +168,7 @@
   display: flex;
   gap: 120px;
   align-items: center;
+  border-bottom: 1px solid #000000;
 }
 .cover {
   color: #707783;
@@ -181,22 +182,7 @@
   flex: 1 1 50%;
   line-height: 24px;
 }
-.interpreter {
-  margin-bottom: 8px;
-  display: flex;
-  gap: 60px;
-  align-items: center;
-}
-.interpreter a {
-  color: #0b63f6;
-  font-size: 18px;
-}
-.interpreterOfBook {
-  color: #707783;
-  font-size: 20px;
-  line-height: 24px;
-  width: 50%;
-}
+
 .description {
   margin-top: 20px;
   width: 50%;
@@ -212,23 +198,10 @@
   font-weight: 400;
   line-height: 24px;
   padding-left: 5px;
+  text-decoration: underline #459efa
 }
-.btn {
-  margin-bottom: 8px;
-  margin-top: 20px;
-  display: flex;
-  padding-top: 10px;
-  padding-left: 5px;
-  flex-direction: column;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 24px;
-}
-.h1 {
-  margin: 15px;
-  text-decoration: underline rgb(0, 153, 255)
 
-}
+
 .btn2 {
   margin-bottom: 8px;
 }
@@ -242,7 +215,6 @@
   padding-top: 5px;
   width: 20px;
   height: 20px;
-
 }
 
 .optionsAndButtons {
@@ -251,5 +223,5 @@
 }
 .textAndDisription {
   margin-left: -220px;
+  margin-top: 30px;
 }
-
