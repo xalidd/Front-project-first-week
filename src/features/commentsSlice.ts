@@ -10,7 +10,7 @@ export const fetchComments = createAsyncThunk(
   "comments/fetchComments", 
   async (id, thunkAPI) => {
     try {
-      const res = await fetch(`http://localhost:3040/comments/${id}`, {
+      const res = await fetch(`http://localhost:3040/comments/655c7a388395c3bb02fb1ca1`, {
         method: "GET",
       });
 

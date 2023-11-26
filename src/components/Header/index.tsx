@@ -7,20 +7,25 @@ import Categories from "./categories";
 import { useDispatch, useSelector } from "react-redux";
 import { exit } from "../../features/applicationSlice";
 import Search from "../Search/Index";
+import { fetchBasket } from "../../features/basketSlica";
 
 export const Header = () => {
   const [state, SetState] = useState(false);
   const dispatch = useDispatch();
   const image = useSelector((state) => state.application.user.avatar);
   const num = useSelector((state) => state.application);
+  console.log(num);
+
   const token = useSelector((state) => state.application.token);
   const user = useSelector((state) => state.application.user.login);
-  const bookInBasket = useSelector(state => state.books.bookInBasket)
+  
   const bookInbusket = useSelector(state => state.basket.BooksInBasket)
-
+  
   const handleClose = () => {
     dispatch(exit());
   };
+  const bookInBasket = useSelector(state => state.basket)
+  console.log(bookInBasket);
   if (!token) {
     return (
       <div className={styles.wrapper}>
@@ -49,14 +54,8 @@ export const Header = () => {
             <Link to={"/signup"} className={styles.NavLink}>
               Регистрация
             </Link>
-            <Link className={styles.NavLink} to={"/#"}>
-              Мои книги
-            </Link>
-            <Link className={styles.NavLink} to={"/#"}>
-              Закладки
-            </Link>
-            <Link className={styles.NavLink} to={"/busket"}>
-              Корзина <span>{bookInBasket.length}</span>
+            <Link className={styles.NavLink} to={"/signup"}>
+            Мои книги 
             </Link>
           </div>
         </div>
@@ -97,10 +96,7 @@ export const Header = () => {
               <button onClick={handleClose}>Выйти</button>
             </li>
             <li>
-              <a href="">Мои книги</a>
-            </li>
-            <li>
-              <Link to={"/busket"}>Корзина</Link>
+              <Link to={"/mybook"}>Мои книги<span>{bookInBasket.length}</span></Link>
             </li>
           </ul>
         </div>

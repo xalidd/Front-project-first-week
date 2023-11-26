@@ -7,7 +7,12 @@ const initialState = {
 
 export const fetchBasket = createAsyncThunk("fetch/basket", async(_,thunkAPI) =>{
     try {
-        const res = await fetch("http://localhost:3040/basket")
+        const res = await fetch("http://localhost:3040/basket", {
+            headers: {
+                "Content-Type":"books/json",
+                Authorization: `Bearer ${thunkAPI.getState().application.token}`
+            },
+        })
 
         const basket = await res.json()
         return basket
@@ -17,18 +22,15 @@ export const fetchBasket = createAsyncThunk("fetch/basket", async(_,thunkAPI) =>
 })
 
 export const addBookInBasket = createAsyncThunk("addBook/fetch", async(id,thunkAPI) => {
-    console.log(id);
-    
     try {
         const res = await fetch(`http://localhost:3040/basket/${id}`, {
             headers: {
-                "Content-Type":"books/json"
+                "Content-Type":"books/json",
+                Authorization: `Bearer ${thunkAPI.getState().application.token}`
             },
             method:"PATCH",
         })
-        
         const data = await res.json()
-        console.log(data);
         return thunkAPI.fulfillWithValue(data)
     } catch (error) {
         return thunkAPI.rejectWithValue(error);
