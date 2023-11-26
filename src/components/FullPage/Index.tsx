@@ -31,7 +31,11 @@ const FullPage = () => {
         </div>
         <div className={styles.info}>
           <h1 id={styles.name}>{cart?.name}</h1>
-
+          <div className={styles.buttons}>
+            <button className={styles.btn2}>
+              <b>Добавить книгу</b>
+            </button>
+          </div>
           <div className={styles.optionsAndButtons}>
             <div className={styles.options}>
               <div className={styles.bookId}>
@@ -41,9 +45,7 @@ const FullPage = () => {
               <div className={styles.aut}>
                 {" "}
                 <span className={styles.author}>Автор </span>{" "}
-                <a href="https://ru.wikipedia.org/wiki/%D0%A1%D0%B0%D0%BF%D0%BA%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B9,_%D0%90%D0%BD%D0%B4%D0%B6%D0%B5%D0%B9">
-                  {cart?.author}
-                </a>
+                <a>{cart?.author}</a>
               </div>
               <div className={styles.categ}>
                 <span className={styles.category}>Категория </span>{" "}
@@ -61,26 +63,6 @@ const FullPage = () => {
                 <span className={styles.cover}>Тип обложки</span>{" "}
                 <span className={styles.coverOfBook}>Твердый</span>
               </div>
-              <div className={styles.interpreter}>
-                <span className={styles.interpreterOfBook}>Переводчик</span>{" "}
-                <a href="https://ru.wikipedia.org/wiki/%D0%92%D0%B0%D0%BD_%D0%94%D0%B0%D0%BC%D0%BC,_%D0%96%D0%B0%D0%BD-%D0%9A%D0%BB%D0%BE%D0%B4">
-                  Вандамм
-                </a>
-              </div>
-            </div>
-            <div className={styles.buttons}>
-              <h2 className={styles.h1}>{cart?.price}</h2>
-              <button className={styles.btn}>Купить сейчас</button>
-              <button className={styles.btn2}>Добавить в корзину</button>
-              <p>
-                {" "}
-                <img id={styles.car} src={car} alt="" />
-                Доставка курьером, ага, а еще чего?
-              </p>
-              <p>
-                <img id={styles.point} src={point} alt="" /> Доставка в пункт
-                выдачи, тоже не доставляем
-              </p>
             </div>
           </div>
           <div className={styles.textAndDisription}>
