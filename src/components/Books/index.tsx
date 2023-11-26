@@ -54,14 +54,9 @@ export const Books = () => {
             </Link>
             <div className={style.line_1}>
               <div className="left">
-                <span className={style.oldPrice}>1450 ₽</span>
-                <span className={style.actuaclPrice}>{item.price}</span>
-              </div>
-              <div className={style.right}>
-                <span className={style.sale}>20%</span>
+                <span className={style.oldPrice}>{item.categoryId.text}</span>
               </div>
             </div>
-
             <div className={style.line_2}>
               <div className={style.title_head}>
                 <Link to={`/books/${item._id}`}>{item.name}</Link>
