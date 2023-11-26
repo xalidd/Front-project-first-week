@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background:#b655ff;
+  background: #b655ff;
   margin-bottom: 25px;
 }
 
@@ -54,7 +54,7 @@ ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  background-color: ;
+  display: flex;
 }
 
 ul li {
@@ -85,7 +85,23 @@ ul li a {
   width: 496px;
   margin-left: -153px;
 }
-
+.navBar ul {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+.navBar ul li button {
+  width: 63px;
+  height: 28.8px;
+  font-size: 13px;
+  font-family: sans-serif;
+  border-radius: 10px;
+  border: none;
+  background: white;
+}
+.navBar ul li img {
+  border-radius:15px;
+}
 .downNavBar {
   display: flex;
   justify-content: center;
@@ -104,10 +120,10 @@ ul li a {
   font-family: Georgia, serifr;
   font-weight: 500;
   font-size: 20px;
-  color:white;
+  color: white;
   &:hover {
     cursor: pointer;
-    color:rgb(232, 231, 231);
+    color: rgb(232, 231, 231);
   }
 }
 .NavLink span {
@@ -123,4 +139,9 @@ ul li a {
   text-align: center;
   border-radius: 12px;
   height: 21px;
+}
+.userAvatar img {
+}
+.userSettings {
+  position: absolute;
 }
