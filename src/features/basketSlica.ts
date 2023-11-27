@@ -2,7 +2,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { Exception } from "sass";
 
 const initialState = {
-    BooksInBasket: []
+    basket: []
 }
 
 export const fetchBasket = createAsyncThunk("fetch/basket", async(_,thunkAPI) =>{
@@ -39,11 +39,12 @@ export const addBookInBasket = createAsyncThunk("addBook/fetch", async(id,thunkA
 
 export const  deleteBookInBasket = createAsyncThunk("deleteBook/fetch",async(id,thunkAPI) => {
     try {
-        const res = await fetch(`http://localhost:3040/basket/${id}`, {
+        const res = await fetch(`http://localhost:3040/basketUp/${id}`, {
             headers: {
-                "Content-Type":"application/json"
+                "Content-Type":"application/json",
+                Authorization: `Bearer ${thunkAPI.getState().application.token}`
             },
-            method:"DELETE",
+            method:"PATCH",
         })
         
         const date = await res.json()
@@ -60,15 +61,15 @@ const basketSlice = createSlice({
     extraReducers: (builder) => {
         builder
             .addCase(fetchBasket.fulfilled, (state, action) => {
-                state.BooksInBasket = action.payload
+                state.basket = action.payload
             })
             .addCase(addBookInBasket.fulfilled, (state, action) => {
                 console.log(action.payload);
                 
-                state.BooksInBasket.push(action.payload)
+                state.basket.push(action.payload)
             })
             .addCase(deleteBookInBasket.fulfilled, (state,action) => {
-            state.BooksInBasket = state.BooksInBasket.filter((item) => item._id !== action.payload._id)
+            state.basket = action.payload
             })
     }
 })
