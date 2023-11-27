@@ -8,40 +8,34 @@ import { Link } from "react-router-dom";
 
 export const Busket = () => {
   const dispatch = useDispatch();
-  
+
   useEffect(() => {
-    dispatch(fetchBasket())
-  },[dispatch])
-  const bookInbusket = useSelector(state => state.basket.BooksInBasket.books)
+    dispatch(fetchBasket());
+  }, [dispatch]);
+  const bookInbusket = useSelector((state) => state.basket.BooksInBasket.books);
   console.log(bookInbusket);
-  
-  
+
   return (
-    <>
-      <h1>Корзина</h1>
+    <div className={styles.mainBusketDiv}>
       <div className={styles.Busket}>
         {bookInbusket?.map((book) => (
           <div className={styles.busketElements}>
-            <div>
-              <img id={styles.book} src={book.image} alt="" />
-              <button className={styles.deleteBook}>Удалить</button>
+            <div className={styles.frameImg}>
+              <img src={book.image} alt="" />
             </div>
-            <div className={styles.line_1}>
               <div className={styles.line_2}>
                 <div className={styles.bookName}>{book.name}</div>
                 <div className={styles.title_author}>{book.author}</div>
               </div>
               <div className={styles.line_3}>
-                <Link to={`/readbook/${book._id}`}
-                  className={styles.btn_buy}
-                >
+                <Link to={`/readbook/${book._id}`} className={styles.btn_buy}>
                   Читать
                 </Link>
+              <button className={styles.deleteBook}>Удалить</button>
               </div>
-            </div>
           </div>
         ))}
       </div>
-    </>
+    </div>
   );
 };

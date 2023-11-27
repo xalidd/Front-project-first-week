@@ -1,107 +1,124 @@
 .Busket {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(auto, 1fr);
-    grid-column-gap: 20px;
-    grid-row-gap: 20px;
-    margin: 0 auto;
-    width: 1200px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(auto, 1fr);
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  margin: 100px 0px 0px 0px;
+  width: 1200px;
 }
-
+.mainBusketDiv {
+  display: flex;
+  justify-content: center;
+}
 .busketElements {
   width: 280px;
 }
-#book{
-    margin-top: 40px;
-   
-    width: 240px ;
+#book {
+  width: 240px;
 }
 /* .Busket {
     padding-left: 30px;
 } */
-.bookName{
-    font-size: 22px;
-    font-weight: 400;
-    line-height: 24px;
-  
+.bookName {
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 24px;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
 }
 .title_author {
-    color: #707783;
-    display: -webkit-box;
-    font-size: 14px;
-  }
-  .deleteBook{
-    border: none;
-    color: #f34a57;
-    cursor: pointer;
-    padding-left: 5px;
-  }
+  color: #707783;
+  display: -webkit-box;
+  font-size: 14px;
+}
 .oldPrice {
-    color: #707783;
-    text-decoration: line-through;
-    display: block;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 20px;
-    position: relative;
-    white-space: nowrap;
+  color: #707783;
+  text-decoration: line-through;
+  display: block;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  position: relative;
+  white-space: nowrap;
+}
+.left {
+}
+
+.line_1 {
+  align-items: flex-end;
+  display: flex;
+  grid-area: price;
+  justify-content: space-between;
+  min-height: 46px;
+}
+.actuaclPrice {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 26px;
+  white-space: nowrap;
+  color: #f34a57;
+}
+.right {
+  align-items: flex-end;
+  display: flex;
+  grid-area: price;
+  justify-content: space-between;
+  min-height: 46px;
+}
+.sale {
+  background-color: #cc3e49;
+  color: white;
+  border-radius: 24px;
+  font-size: 13px;
+  width: 40px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.line_1 {
+  padding-bottom: 12px;
+}
+.line_2 {
+  display: flex;
+  flex-direction: column;
+}
+
+.btn_buy {
+  background-color: #26a9e0;
+  border: none;
+  cursor: pointer;
+  width: 190px;
+  height: 35px;
+  border-radius: 5px;
+  color: white;
+  margin-right: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &:hover {
+   background-color:#03a3e7;
   }
- .left{
- 
- }
-  
-  .line_1 {
-    align-items: flex-end;
-    display: flex;
-    grid-area: price;
-    justify-content: space-between;
-    min-height: 46px;
+}
+.deleteBook {
+  border: none;
+  color: #f34a57;
+  cursor: pointer;
+  width: 80px;
+  border-radius: 10px;
+  &:hover {
+    background: #d3d2d2;
   }
-  .actuaclPrice {
-    font-size: 20px;
-    font-weight: 500;
-    line-height: 26px;
-    white-space: nowrap;
-    color: #f34a57;
-  }
-  .right {
-    align-items: flex-end;
-    display: flex;
-    grid-area: price;
-    justify-content: space-between;
-    min-height: 46px;
-  }
-  .sale {
-    background-color: #cc3e49;
-    color: white;
-    border-radius: 24px;
-    font-size: 13px;
-    width: 40px;
-    height: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .line_1 {
-    padding-bottom: 12px;
-  }
-  .line_2 {
-    margin-bottom: 15px;
-  }
-  
-  .btn_buy {
-    background-color: #26a9e0;
-    border: none;
-    cursor: pointer;
-    width: 190px;
-    height: 35px;
-    border-radius: 5px;
-    color: white;
-    margin-right: 8px;
-  }
-  .line_3 {
-    width: 100%;
-    display: flex;
-    text-align: center
-  }
-  
+}
+.line_3 {
+  width: 100%;
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+  margin: 10px 0 10px 0;
+}
+.frameImg img {
+  height: 370px;
+}
