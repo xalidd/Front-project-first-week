@@ -18,13 +18,13 @@ export const Header = () => {
 
   const token = useSelector((state) => state.application.token);
   const user = useSelector((state) => state.application.user.login);
-  
-  const bookInbusket = useSelector(state => state.basket.BooksInBasket)
-  
+
+  const bookInbusket = useSelector((state) => state.basket.BooksInBasket);
+
   const handleClose = () => {
     dispatch(exit());
   };
-  const bookInBasket = useSelector(state => state.basket)
+  const bookInBasket = useSelector((state) => state.basket.BooksInBasket);
   console.log(bookInBasket);
   if (!token) {
     return (
@@ -54,8 +54,11 @@ export const Header = () => {
             <Link to={"/signup"} className={styles.NavLink}>
               Регистрация
             </Link>
+            <Link to={"/signin"} className={styles.NavLink}>
+              Войти
+            </Link>
             <Link className={styles.NavLink} to={"/signup"}>
-            Мои книги 
+              Мои книги
             </Link>
           </div>
         </div>
@@ -71,33 +74,32 @@ export const Header = () => {
             <img src={logo} alt="" width={70} height={70} />
           </Link>
         </div>
-
-        <div className="searchForma">
-          <input
-            placeholder="Введите название книги или автора"
-            className={styles.search}
-            type="text"
-          />
-          <button className={styles.btnNew}>Найти</button>
-        </div>
+        <Search />
         <div className={styles.navBar}>
           <ul>
             <li>
+              <Link to={"/mybook"} className={styles.NavLink}>
+                Мои книги
+                {/* <span>{bookInBasket.length}</span> */}
+              </Link>
+            </li>
+            <li>
+              <h3 className={styles.NavLink}>{user}</h3>
+            </li>
+            <li>
               <img
+                onClick={() => SetState(!state)}
                 className={styles.img_logo}
                 src={`http://localhost:3040/${image}`}
                 alt=""
               />
             </li>
-            <li>
-              <span className={styles.name}>{user}</span>
-            </li>
-            <li>
-              <button onClick={handleClose}>Выйти</button>
-            </li>
-            <li>
-              <Link to={"/mybook"}>Мои книги<span>{bookInBasket.length}</span></Link>
-            </li>
+              <div className={`${styles.airDiv} ${state && styles.airDivActive}`}>
+                <li>
+                  <h3>{user}</h3>
+                  <button onClick={handleClose}>Выйти</button>
+                </li>
+              </div>
           </ul>
         </div>
       </div>
