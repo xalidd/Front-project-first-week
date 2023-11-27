@@ -2,11 +2,13 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
+  background:#514a90;
+  margin-bottom: 25px;
 }
 
 .wrapper {
   height: 120px;
-  padding: 15px;
+  background: #f8f8f6;
 }
 .btnNew {
   text-align: center;
@@ -52,94 +54,139 @@ ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  background-color: ;
+  display: flex;
 }
 
 ul li {
-  display: inline-block;
-  margin-right: 10px;
+  display: flex;
+  align-items: center;
+  /* &:hover {
+    background-color: rgb(227, 215, 240);
+    border-radius: 20px;
+    text-decoration: solid 6.3px underline;
+  } */
 }
 
 ul li a {
-  display: block;
+  display: flex;
   padding: 10px;
   text-decoration: none;
   color: #333;
   font-family: Arial, sans-serif;
   font-size: 16px;
-}
-
-ul li a:hover {
-  background-color: rgb(227, 215, 240);
-  border: solid 0.5px black;
-  border-radius: 20px;
+  gap: 10px;
 }
 
 .navBar {
-  width: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  text-align: center;
+  width: 496px;
+  margin-left: -153px;
 }
-
+.navBar ul {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+.navBar ul li {
+  border-radius: 15px;
+}
+.navBar ul li button {
+  width: 63px;
+  height: 28.8px;
+  font-size: 13px;
+  font-family: sans-serif;
+  border-radius: 10px;
+  border: none;
+  background: white;
+  margin-bottom: -18px;
+  cursor: pointer;
+  &:hover {
+    box-shadow: 3px 0px 20px 4px #ceb7ff;
+  }
+}
+.navBar ul li img {
+  border-radius: 25px;
+  z-index: 999999;
+  &:hover {
+    cursor: pointer;
+    box-shadow: 3px 0px 20px 4px #ceb7ff;
+  }
+}
 .downNavBar {
   display: flex;
   justify-content: center;
-  /* gap: 10px; */
   font-size: 20px;
   margin-top: 10px;
-}
-a {
-  text-decoration: none;
-  color: black;
-}
-.k1 {
-  padding: 10px;
-  width: 143px;
-  background: gold;
-  height: 27px;
-  text-align: center;
-  font-size: 17.2px;
-  border-top-left-radius: 30px;
-  border-bottom-left-radius: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: -10px;
-  border: solid 1px #908759;
-  transition: all 0.15s ease-in-out;
-}
-.k1:hover {
-  width: 160px;
-  background: rgb(255 224 0);
-}
-
-.k2:hover {
-  background-color: rgb(227, 215, 240);
-  background-color: rgb(227, 215, 240);
-  border: solid 0.5px black;
-  border-radius: 20px;
-}
-
-.k3:hover {
-  background-color: rgb(227, 215, 240);
-  background-color: rgb(227, 215, 240);
-  border: solid 0.5px black;
-  border-radius: 20px;
-}
-
-.k4:hover {
-  background-color: rgb(227, 215, 240);
-  background-color: rgb(227, 215, 240);
-  border: solid 0.5px black;
-  border-radius: 20px;
-}
-
-.k5:hover {
-  background-color: rgb(227, 215, 240);
-  background-color: rgb(227, 215, 240);
-  border: solid 0.5px black;
-  border-radius: 20px;
 }
 
 .img_logo {
   width: 50px;
   height: 50px;
+}
+
+.NavLink {
+  display: flex;
+  gap: 10px;
+  font-family: Georgia, serifr;
+  font-weight: 500;
+  font-size: 20px;
+  color: #ffffff;
+
+  &:hover {
+    cursor: pointer;
+    color: rgb(206, 206, 206);
+  }
+}
+.NavLink span {
+  position: absolute;
+  background-color: red;
+  top: 27px;
+  right: 80px;
+  color: white;
+  display: inline-block;
+  padding-left: 5px;
+  padding-right: 5px;
+  font-size: 17px;
+  text-align: center;
+  border-radius: 12px;
+  height: 21px;
+}
+.userAvatar img {
+}
+.userSettings {
+  position: absolute;
+}
+.airDiv {
+  position: absolute;
+  background: #514a90;
+  width: 107px;
+  height: 148px;
+  top: 50px;
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  right: 136px;
+  transition: .3s;
+  border-bottom-left-radius: 22px;
+  border-bottom-right-radius: 22px;
+  border-bottom: 2px solid #3c0187;
+  box-shadow: 2px 23px 20px 5px #ceb7ff;
+}
+.airDiv.airDivActive {
+  top:73px;
+  opacity: 1;
+  z-index: 9999;
+}
+.airDiv li {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.airDiv li h3 {
+  font-size: 22px;
+  font-family: auto;
+  color: #ffe91d;
 }

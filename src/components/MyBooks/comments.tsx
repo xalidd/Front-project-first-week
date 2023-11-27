@@ -1,22 +1,34 @@
-import React from 'react'
-import { useDispatch } from 'react-redux';
-import { deleteComment } from '../../features/commentsSlice';
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { deleteComment } from "../../features/commentsSlice";
+import styles from "./myBooks.module.css";
 
-const Comments = ({item}) => {
-    
-    const dispatch = useDispatch();
+const Comments = ({ item }) => {
+  const token = useSelector((state) => state.application.user);
+  console.log(token);
 
-    const handleDeleteComment = (id) => {
-        dispatch(deleteComment(id))
+  const dispatch = useDispatch();
+
+  const handleDeleteComment = (id) => {
+    if (token) {
+      dispatch(deleteComment(id));
+    } else {
     }
-    
-  return (
-    <div>
-       <h4>{item.userId?.login}</h4>
-      {item.text}
-      <button className='delete-com' onClick={() => handleDeleteComment(item._id)}>x</button> {}
-    </div>
-  )
-}
+  };
 
-export default Comments
+  return (
+    <div className={styles.cont}>
+      <div className={styles.com_add1}>
+        <div className={styles.avat}>
+          <h4 className={styles.h1text}>{item.userId?.login}</h4>
+        </div>
+        <div className={styles.cont2}>
+          <div className={styles.commen}>{item.text}</div>
+          <button onClick={() => handleDeleteComment(item._id)}>❌</button> {}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Comments;
