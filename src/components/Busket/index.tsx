@@ -3,7 +3,7 @@ import styles from "./busket.module.css";
 import book from "../../someimg/ведьмак.jpeg";
 import { useDispatch, useSelector } from "react-redux";
 import { addBook } from "../../features/booksSlice";
-import { addBookInBasket, fetchBasket } from "../../features/basketSlica";
+import { addBookInBasket, deleteBookInBasket, fetchBasket } from "../../features/basketSlica";
 import { Link } from "react-router-dom";
 
 export const Busket = () => {
@@ -12,7 +12,7 @@ export const Busket = () => {
   useEffect(() => {
     dispatch(fetchBasket());
   }, [dispatch]);
-  const bookInbusket = useSelector((state) => state.basket.BooksInBasket.books);
+  const bookInbusket = useSelector((state) => state.basket.basket.books);
   console.log(bookInbusket);
 
   return (
@@ -31,7 +31,7 @@ export const Busket = () => {
                 <Link to={`/readbook/${book._id}`} className={styles.btn_buy}>
                   Читать
                 </Link>
-              <button className={styles.deleteBook}>Удалить</button>
+              <button className={styles.deleteBook} onClick={() => dispatch(deleteBookInBasket(book._id))}>Удалить</button>
               </div>
           </div>
         ))}
