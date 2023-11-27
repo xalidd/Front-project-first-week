@@ -52,15 +52,16 @@ export const Books = () => {
             <Link to={`/books/${item._id}`}>
               <img src={item.image} alt="" sizes="" srcset="" />
             </Link>
+            <div className={style.line_2}>
+            <div className={style.title_head}>
+                <Link to={`/books/${item._id}`}>{item.name}</Link>
+              </div>
             <div className={style.line_1}>
               <div className="left">
                 <span className={style.oldPrice}>{item.categoryId.text}</span>
               </div>
             </div>
-            <div className={style.line_2}>
-              <div className={style.title_head}>
-                <Link to={`/books/${item._id}`}>{item.name}</Link>
-              </div>
+              
               <div className={style.title_author}>{item.author}</div>
             </div>
 
