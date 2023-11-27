@@ -19,19 +19,12 @@ const Comments = ({ item }) => {
   return (
     <div className={styles.cont}>
       <div className={styles.com_add1}>
-        
         <div className={styles.avat}>
           <h4 className={styles.h1text}>{item.userId?.login}</h4>
         </div>
         <div className={styles.cont2}>
           <div className={styles.commen}>{item.text}</div>
-          <button
-            className={styles.btn}
-            onClick={() => handleDeleteComment(item._id)}
-          >
-            x
-          </button>{" "}
-          {}
+          <button onClick={() => handleDeleteComment(item._id)}>❌</button> {}
         </div>
       </div>
     </div>
