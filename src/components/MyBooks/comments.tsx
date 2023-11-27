@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { deleteComment } from "../../features/commentsSlice";
 import styles from "./myBooks.module.css";
 
-const Comments = ({ item }) => {
+const Comments = ({ item}) => {
   const token = useSelector((state) => state.application.user);
   console.log(token);
 
@@ -24,7 +24,7 @@ const Comments = ({ item }) => {
         </div>
         <div className={styles.cont2}>
           <div className={styles.commen}>{item.text}</div>
-          <button onClick={() => handleDeleteComment(item._id)}>❌</button> {}
+          <button className={styles.btn} onClick={() => handleDeleteComment(item._id)}>❌</button> {}
         </div>
       </div>
     </div>

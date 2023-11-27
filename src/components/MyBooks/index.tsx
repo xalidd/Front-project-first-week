@@ -27,20 +27,24 @@ const MyBooks = () => {
     setNewComment("");
   };
 
-  const bookItem = useSelector((item) =>
-    item.books.books?.find((res) => {
-      console.log(res);
-      if (res._id === id) {
-        return res;
-      }
-    })
+  const bookItem = useSelector(
+    (item) =>
+      item.books.books?.find((res) => {
+        console.log(res);
+        if (res._id === id) {
+          return res;
+        }
+      })
   );
   console.log(bookItem);
 
   return (
     <div className={styles.bookFullPage}>
       <div className={styles.book}>
-        <img src={bookItem?.image} alt="" />
+        <div className={styles.img2}>
+          <img src={bookItem?.image} alt="" />
+        </div>
+
         <div className={styles.title}>
           <div className={styles.title1}>{bookItem?.name}</div>
           <div className={styles.title2}>{bookItem?.categoryId.text}</div>
@@ -74,9 +78,9 @@ const MyBooks = () => {
           </form>
         </div>
         <div className={styles.main2}>
-          {comments?.map((item) => (
-            <Comments key={item._id} item={item} />
-          ))}
+          {comments
+            ?.map((item) => <Comments key={item._id} item={item} />)
+            .reverse()}
         </div>
       </div>
     </div>

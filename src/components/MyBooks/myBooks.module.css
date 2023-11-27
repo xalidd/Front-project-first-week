@@ -1,30 +1,29 @@
-.bookFullPage {
-  display: flex;
-  flex-direction: column;
-  margin: 30px 0 0 0;
-}
 .book {
+  padding-left: 5%;
   display: flex;
-  margin: 5px 0 0 30px;
 }
-.book img {
-  width: 280px;
-}
+
 .title {
-  padding: 10px;
-  width: 24%;
+  padding-left: 5%;
 }
 .title1 {
-  font-size: 22px;
+  padding-top: 19%;
+  font-size: 18px;
   color: #31a3c3e8;
 }
 .title2 {
-  padding-top: 5%;
+  padding-top: 10%;
   color: #707783;
+}
+
+.img2 {
+  padding-top: 2%;
+  width: 20%;
 }
 
 .text_p {
   width: 50%;
+  margin: auto;
   font-size: 21px;
 }
 
@@ -36,52 +35,31 @@
 .text_p {
   border-radius: 6px;
   overflow-y: auto;
-  max-height: 405px;
+  height: 500px;
+  padding-top: 2%;
 }
 
 .formTop {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  padding-left: 5%;
+  padding-top: 12%;
 }
-.form_class {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 15px 0 0 10px;
-}
-.form_class button {
-  display: flex;
-  width: 100%;
-  border: none;
-  border-radius: 10px;
-  margin-left: 12px;
-  justify-content: center;
-  align-items: center;
-}
-.areAndButton {
-  width: 100px;
-}
+
 .input {
-  width: 65%;
-  /* height: 30vh; */
+  width: 56%;
+  height: 25vh;
   padding: 6px 12px;
 }
 
 .btn {
   display: inline-block;
   text-align: center;
-  padding: 0 20px;
-  height: 50px;
-  line-height: 40px;
+  padding: 4px 4px;
+
   border-radius: 3px;
   cursor: pointer;
   text-transform: uppercase;
-  box-shadow: inset 0 -3px #6a3;
+
   color: #fff;
-  background-color: #79c142;
-  font-size: 14px;
-  font-weight: 300;
 }
 
 .add_com {
@@ -103,8 +81,8 @@
 .com_add1 {
   justify-content: space-around;
   background: transparent;
-  background: #e3f9e1;
-  width: 70%;
+  background: #b3b8b338;
+  width: 56%;
   padding-top: 3%;
   margin: 0;
   padding: 0;
@@ -113,6 +91,7 @@
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+  height: 20vh;
 }
 .h1text {
   border-radius: 50%;
@@ -127,34 +106,22 @@
 }
 
 .cont {
-  display: flex;
-  justify-content: center;
+  padding-top: 3%;
 }
 
 .cont2 {
   display: flex;
   justify-content: space-between;
 }
-.cont2 button {
-  display: flex;
-  width: 28px;
-  height: 26px;
-  justify-content: center;
-  align-items: center;
-  margin: 12px;
-  background: none;
-  border: none;
-  font-size: 20px;
-  &:hover {
-    cursor: pointer;
-  }
-}
 .avat {
-  background-color: white;
+  background-color: #f8f6f6;
 }
 
 .commen {
   padding: 6px 12px;
   width: 762px;
   word-wrap: break-word;
+}
+.book {
+  padding-top: 3%;
 }
